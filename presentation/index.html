@@ -151,6 +151,37 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
 .pbar{height:100%;border-radius:7px;display:flex;align-items:center;padding:0 11px;font-size:10px;font-weight:700;white-space:nowrap;color:#fff;width:0;animation:barGrow 1s ease both var(--bd,0s);}
 .pwk{font-size:10px;color:var(--text2);min-width:70px;text-align:left;}
 
+/* scenario cards */
+.sc-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px 15px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;}
+.sc-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-h);}
+.sc-badge{font-size:9px;font-weight:800;letter-spacing:.5px;padding:3px 9px;border-radius:10px;display:inline-flex;align-items:center;gap:5px;margin-bottom:7px;}
+.sc-badge svg{width:9px;height:9px;stroke:currentColor;fill:none;stroke-width:2.5;}
+.sc-title{font-size:12px;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.35;}
+.sc-rule{font-size:10px;color:var(--text2);line-height:1.7;}
+.sc-formula{font-size:10px;font-weight:700;padding:5px 10px;border-radius:7px;margin-top:8px;display:block;text-align:center;}
+/* phone wireframes */
+.phone-frame{width:175px;flex-shrink:0;background:#e2e8f0;border-radius:26px;padding:8px;box-shadow:0 8px 28px rgba(0,0,0,.11),inset 0 0 0 1px rgba(0,0,0,.07);}
+.phone-notch{width:52px;height:7px;background:#94a3b8;border-radius:4px;margin:0 auto 6px;}
+.phone-screen{background:#fff;border-radius:18px;overflow:hidden;border:1px solid rgba(0,0,0,.05);}
+.ps-topbar{height:30px;background:linear-gradient(135deg,var(--blue),var(--teal));display:flex;align-items:center;padding:0 9px;gap:5px;}
+.ps-topbar-t{font-size:8px;font-weight:700;color:#fff;flex:1;}
+.ps-topbar svg{width:10px;height:10px;stroke:#fff;fill:none;stroke-width:2;}
+.ps-body{padding:7px;}
+.ps-slbl{font-size:6.5px;font-weight:700;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-bottom:5px;}
+.ps-prow{display:flex;align-items:center;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(0,0,0,.04);}
+.ps-pname{font-size:7.5px;color:var(--text2);flex:1;}
+.ps-dot{width:5px;height:5px;border-radius:50%;margin-left:3px;flex-shrink:0;}
+.ps-qb{display:flex;align-items:center;gap:2px;}
+.ps-pm{width:13px;height:13px;border:1px solid var(--border);border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--text2);}
+.ps-n{width:16px;text-align:center;font-size:7.5px;font-weight:700;}
+.ps-n.up{color:var(--green);}
+.ps-foot{background:rgba(37,99,235,.04);border-top:1px solid var(--border);padding:5px 7px;display:flex;align-items:center;justify-content:space-between;}
+.ps-tl{font-size:7px;color:var(--text2);}
+.ps-tn{font-size:9px;font-weight:800;color:var(--blue);}
+.ps-act{border-radius:5px;padding:3px 7px;font-size:7.5px;font-weight:700;color:#fff;}
+.ph-arr{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;flex-shrink:0;}
+.ph-arr svg{width:16px;height:16px;stroke:var(--teal);fill:none;stroke-width:1.8;}
+.ph-arr span{font-size:8px;color:var(--text2);text-align:center;}
 /* nav */
 #nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:11px;z-index:100;background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:50px;padding:7px 18px;backdrop-filter:blur(16px);box-shadow:0 4px 20px rgba(0,0,0,.09);}
 .nbtn{width:34px;height:34px;border-radius:50%;background:var(--bg);border:1px solid var(--border);color:var(--text2);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
@@ -297,6 +328,55 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
   </div>
 </div>
 
+<!-- ③-b حالت‌های مواجهه -->
+<div class="slide" id="sA" data-title="ماتریس حالت‌های مواجهه با محصول">
+  <div class="tag anim anim-down" style="margin-bottom:14px">PRODUCT STATE MATRIX</div>
+  <div class="h1 anim anim-down" style="margin-bottom:7px">۶ حالت <span class="t">مواجهه با محصول</span></div>
+  <div class="sub anim anim-down" style="margin-bottom:20px">سیستم برای هر وضعیت قانون مجزایی اجرا می‌کند</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:11px;width:100%;max-width:980px">
+    <div class="sc-card anim">
+      <div class="sc-badge" style="background:rgba(5,150,105,.08);color:var(--green)"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>دیده شد</div>
+      <div class="sc-title">محصول روی شلف بود</div>
+      <div class="sc-rule">AI محصول را شناخت · تاریخچه خرید وجود دارد</div>
+      <div class="sc-formula" style="background:rgba(5,150,105,.06);color:var(--green)">پیشنهاد = میانگین n ماه</div>
+    </div>
+    <div class="sc-card anim" style="border-color:rgba(8,145,178,.2)">
+      <div class="sc-badge" style="background:rgba(8,145,178,.08);color:var(--teal)"><svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>نبود در شلف</div>
+      <div class="sc-title">تاریخچه دارد · از شلف افتاده</div>
+      <div class="sc-rule">AI نشناخت · قبلاً فروخته شده · فرصت رشد</div>
+      <div class="sc-formula" style="background:rgba(8,145,178,.06);color:var(--teal)">میانگین × (۱ + رشد%)</div>
+    </div>
+    <div class="sc-card anim" style="border-color:rgba(124,58,237,.2)">
+      <div class="sc-badge" style="background:rgba(124,58,237,.08);color:var(--purple)"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>تأکیدی</div>
+      <div class="sc-title">در لیست تأکیدی سیلانه</div>
+      <div class="sc-rule">فروش بیشتر هدف‌گذاری شده · رشد% بالاتر از حالت عادی</div>
+      <div class="sc-formula" style="background:rgba(124,58,237,.06);color:var(--purple)">میانگین × (۱ + رشد-تأکیدی%)</div>
+    </div>
+    <div class="sc-card anim" style="border-color:rgba(220,38,38,.2)">
+      <div class="sc-badge" style="background:rgba(220,38,38,.08);color:var(--red)"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>Must-Have</div>
+      <div class="sc-title">محصول الزامی در هر فاکتور</div>
+      <div class="sc-rule">مقدار صفر → هشدار قرمز · حداقل مقدار توسط سیلانه تعریف می‌شود</div>
+      <div class="sc-formula" style="background:rgba(220,38,38,.06);color:var(--red)">حداقل_مقدار ≤ مقدار فاکتور</div>
+    </div>
+    <div class="sc-card anim" style="border:1.5px dashed rgba(217,119,6,.45)">
+      <div class="sc-badge" style="background:rgba(217,119,6,.08);color:var(--gold)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>محصول جدید</div>
+      <div class="sc-title">بدون تاریخچه · تازه لانچ شده</div>
+      <div class="sc-rule">هیچ سابقه‌ای در این فروشگاه نیست · چه مقداری پیشنهاد شود؟</div>
+      <div class="sc-formula" style="background:rgba(217,119,6,.06);color:var(--gold)">مقدار راه‌اندازی ← نیاز به تصمیم</div>
+    </div>
+    <div class="sc-card anim" style="border-color:rgba(148,163,184,.18);opacity:.75">
+      <div class="sc-badge" style="background:rgba(148,163,184,.08);color:var(--text2)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>ناموجود انبار</div>
+      <div class="sc-title">موجودی انبار سیلانه صفر است</div>
+      <div class="sc-rule">نباید در پیشنهاد ظاهر شود · حذف خودکار یا پرچم‌گذاری</div>
+      <div class="sc-formula" style="background:rgba(148,163,184,.06);color:var(--text2)">حذف از لیست پیشنهاد</div>
+    </div>
+  </div>
+  <div class="anim" style="margin-top:13px;font-size:10px;color:var(--gold);display:flex;align-items:center;gap:6px">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
+    «محصول جدید» نیاز به توافق قانون با سیلانه دارد — مقدار پایه باید تعریف شود
+  </div>
+</div>
+
 <!-- ④ پیش‌فاکتور هوشمند -->
 <div class="slide" id="s3" data-title="فیچر ۱: پیش‌فاکتور هوشمند">
   <div class="shimmer-badge anim anim-down" style="margin-bottom:14px">FEATURE 01</div>
@@ -429,6 +509,241 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
       <div class="ico ico-sm" style="color:var(--gold);background:rgba(217,119,6,.07);border-color:rgba(217,119,6,.2);flex-shrink:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <div><div class="ct">پشتیبانی در ریتینر ماهانه</div><div class="cb">اصلاحات ناشی از آپدیت راهکاران در قرارداد ماهانه پوشش دارد</div></div>
     </div>
+  </div>
+</div>
+
+<!-- WIREFRAME -->
+<div class="slide" id="sB" data-title="وایرفریم صفحات پیشنهادی">
+  <div class="tag anim anim-down" style="margin-bottom:14px">WIREFRAMES</div>
+  <div class="h1 anim anim-down" style="margin-bottom:7px">جریان <span class="t">صفحات اپلیکیشن</span></div>
+  <div class="sub anim anim-down" style="margin-bottom:22px">سه صفحه اصلی که فروشنده در میدان با آن‌ها کار می‌کند</div>
+  <div style="display:flex;align-items:flex-start;gap:14px;max-width:900px;width:100%;justify-content:center">
+    <!-- Phone 1: AI list -->
+    <div class="phone-frame anim">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="ps-topbar">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-8-6-8-12a8 8 0 1116 0c0 6-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <div class="ps-topbar-t">سیلانه سبز #۴۷</div>
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><circle cx="12" cy="14" r="3"/></svg>
+        </div>
+        <div class="ps-body">
+          <div class="ps-slbl">پیشنهاد هوشمند</div>
+          <div class="ps-prow"><div class="ps-dot" style="background:var(--green)"></div><div class="ps-pname">مام ۲۵۰ml</div><div class="ps-qb"><div class="ps-pm">−</div><div class="ps-n">۱۰</div><div class="ps-pm">+</div></div></div>
+          <div class="ps-prow"><div class="ps-dot" style="background:var(--teal)"></div><div class="ps-pname">سان ۵۰۰ml</div><div class="ps-qb"><div class="ps-pm">−</div><div class="ps-n up">۱۱</div><div class="ps-pm">+</div></div></div>
+          <div class="ps-prow" style="background:rgba(220,38,38,.03);margin:0 -7px;padding:4px 7px;border-right:2px solid var(--red)"><div class="ps-dot" style="background:var(--red)"></div><div class="ps-pname" style="color:var(--red);font-weight:700">نوا · الزامی</div><div class="ps-qb"><div class="ps-pm">−</div><div class="ps-n">۱۲</div><div class="ps-pm">+</div></div></div>
+          <div class="ps-prow"><div class="ps-dot" style="background:var(--gold)"></div><div class="ps-pname" style="color:var(--gold)">ایکس · جدید</div><div class="ps-qb"><div class="ps-pm">−</div><div class="ps-n" style="color:var(--gold)">۵</div><div class="ps-pm">+</div></div></div>
+          <div class="ps-prow" style="opacity:.4"><div class="ps-dot" style="background:var(--text3)"></div><div class="ps-pname" style="text-decoration:line-through">وای ۱۰۰ml</div><div style="font-size:7px;color:var(--text3)">ناموجود</div></div>
+        </div>
+        <div class="ps-foot"><div><div class="ps-tl">جمع پیشنهاد</div><div class="ps-tn">۵۸M</div></div><div class="ps-act" style="background:linear-gradient(135deg,var(--blue),var(--teal))">ویرایش برند</div></div>
+      </div>
+    </div>
+    <div class="ph-arr anim" style="margin-top:90px">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      <span>تأیید</span>
+    </div>
+    <!-- Phone 2: brand edit -->
+    <div class="phone-frame anim">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="ps-topbar">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          <div class="ps-topbar-t">ویرایش برند</div>
+        </div>
+        <div style="display:flex;border-bottom:1px solid var(--border)">
+          <div style="flex:1;padding:5px 2px;text-align:center;font-size:7px;font-weight:700;color:var(--blue);border-bottom:2px solid var(--blue)">مام</div>
+          <div style="flex:1;padding:5px 2px;text-align:center;font-size:7px;color:var(--text2)">سان</div>
+          <div style="flex:1;padding:5px 2px;text-align:center;font-size:7px;color:var(--text2)">نوا</div>
+        </div>
+        <div class="ps-body">
+          <div class="ps-slbl">مام — ۳ محصول</div>
+          <div class="ps-prow"><div class="ps-pname">مام ۲۵۰ml</div><div class="ps-qb"><div class="ps-pm">−</div><div class="ps-n">۱۰</div><div class="ps-pm">+</div></div></div>
+          <div class="ps-prow"><div class="ps-pname">مام ۵۰۰ml</div><div class="ps-qb"><div class="ps-pm">−</div><div class="ps-n up">۸</div><div class="ps-pm">+</div></div></div>
+          <div class="ps-prow"><div class="ps-pname">مام کرم</div><div class="ps-qb"><div class="ps-pm">−</div><div class="ps-n">۶</div><div class="ps-pm">+</div></div></div>
+          <div style="margin-top:6px;font-size:7px;color:var(--text2);display:flex;justify-content:space-between"><span>جمع مام:</span><span style="color:var(--blue);font-weight:700">۲۴M</span></div>
+        </div>
+        <div class="ps-foot"><div><div class="ps-tl">کل فاکتور</div><div class="ps-tn">۶۲M</div></div><div class="ps-act" style="background:linear-gradient(135deg,var(--blue),var(--teal))">تأیید</div></div>
+      </div>
+    </div>
+    <div class="ph-arr anim" style="margin-top:90px">
+      <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
+      <span>تأیید نهایی</span>
+    </div>
+    <!-- Phone 3: reward + confirm -->
+    <div class="phone-frame anim">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="ps-topbar" style="background:linear-gradient(135deg,var(--gold),#b45309)">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="ps-topbar-t">انتخاب جایزه</div>
+        </div>
+        <div class="ps-body">
+          <div style="text-align:center;margin-bottom:8px;padding-bottom:7px;border-bottom:1px solid var(--border)">
+            <div style="font-size:7px;color:var(--text2);margin-bottom:2px">جمع فاکتور</div>
+            <div style="font-size:18px;font-weight:900;color:var(--gold)">۶۲M</div>
+            <div style="font-size:7px;color:var(--green);margin-top:2px">سطح ۵۰–۷۵M · ۳ گزینه</div>
+          </div>
+          <div style="margin-bottom:5px;padding:6px 7px;border-radius:7px;border:2px solid var(--gold);background:rgba(217,119,6,.05)">
+            <div style="font-size:8px;font-weight:700;color:var(--gold)">جایزه الف</div>
+            <div style="font-size:7px;color:var(--text2);margin-top:1px">بسته کادویی ویژه</div>
+          </div>
+          <div style="margin-bottom:5px;padding:6px 7px;border-radius:7px;border:1px solid var(--border)">
+            <div style="font-size:8px;font-weight:700">جایزه ب</div>
+            <div style="font-size:7px;color:var(--text2);margin-top:1px">تخفیف فاکتور بعدی</div>
+          </div>
+          <div style="padding:6px 7px;border-radius:7px;border:1px solid var(--border)">
+            <div style="font-size:8px;font-weight:700">جایزه ج</div>
+            <div style="font-size:7px;color:var(--text2);margin-top:1px">محصول رایگان</div>
+          </div>
+        </div>
+        <div class="ps-foot" style="background:rgba(5,150,105,.05)"><div><div class="ps-tl">ثبت در</div><div style="font-size:8px;font-weight:700;color:var(--green)">راهکاران</div></div><div class="ps-act" style="background:linear-gradient(135deg,var(--green),#16a34a)">ثبت نهایی</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BIRD'S EYE -->
+<div class="slide" id="sC" data-title="نمای بالا — تصمیم هوشمند در شلف">
+  <div class="tag anim anim-down" style="margin-bottom:14px">BIRD'S EYE VIEW</div>
+  <div class="h1 anim anim-down" style="margin-bottom:7px">تصمیم هوشمند در <span class="t">سطح شلف</span></div>
+  <div class="sub anim anim-down" style="margin-bottom:16px">نمای بالا از فروشگاه — هر رنگ یک قانون</div>
+  <div class="anim" style="width:100%;max-width:840px;border-radius:16px;border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)">
+    <svg viewBox="0 0 840 310" style="width:100%;display:block" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="g2" width="28" height="28" patternUnits="userSpaceOnUse">
+          <path d="M28 0L0 0 0 28" fill="none" stroke="rgba(0,0,0,.04)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="840" height="310" fill="#f0f5fb"/>
+      <rect width="840" height="310" fill="url(#g2)"/>
+      <rect x="28" y="14" width="784" height="270" rx="8" fill="none" stroke="#cbd5e1" stroke-width="1.5"/>
+
+      <!-- Entrance -->
+      <rect x="385" y="278" width="70" height="8" rx="2" fill="#d97706" opacity=".5"/>
+      <text x="420" y="298" text-anchor="middle" font-size="9" fill="#d97706" font-family="Vazirmatn,sans-serif" font-weight="700">ورودی</text>
+
+      <!-- ROW 1 LEFT: دیده شد (GREEN) -->
+      <rect x="46" y="36" width="195" height="52" rx="6" fill="rgba(5,150,105,.07)" stroke="#059669" stroke-width="1.5"/>
+      <rect x="54" y="43" width="24" height="38" rx="3" fill="rgba(5,150,105,.18)"/>
+      <rect x="82" y="43" width="24" height="38" rx="3" fill="rgba(5,150,105,.24)"/>
+      <rect x="110" y="43" width="24" height="38" rx="3" fill="rgba(5,150,105,.18)"/>
+      <rect x="138" y="43" width="24" height="38" rx="3" fill="rgba(5,150,105,.24)"/>
+      <rect x="166" y="43" width="24" height="38" rx="3" fill="rgba(5,150,105,.18)"/>
+      <rect x="47" y="26" width="62" height="14" rx="7" fill="#059669"/>
+      <text x="78" y="36" text-anchor="middle" font-size="8" fill="white" font-family="Vazirmatn,sans-serif" font-weight="700">دیده شد</text>
+      <text x="143" y="54" text-anchor="middle" font-size="7.5" fill="#059669" font-family="Vazirmatn,sans-serif">= میانگین n ماه</text>
+
+      <!-- ROW 1 MID: نبود (TEAL) -->
+      <rect x="270" y="36" width="195" height="52" rx="6" fill="rgba(8,145,178,.07)" stroke="#0891b2" stroke-width="1.5" stroke-dasharray="5 3"/>
+      <rect x="278" y="43" width="24" height="38" rx="3" fill="none" stroke="rgba(8,145,178,.35)" stroke-width="1" stroke-dasharray="3 2"/>
+      <rect x="306" y="43" width="24" height="38" rx="3" fill="none" stroke="rgba(8,145,178,.35)" stroke-width="1" stroke-dasharray="3 2"/>
+      <rect x="334" y="43" width="24" height="38" rx="3" fill="none" stroke="rgba(8,145,178,.35)" stroke-width="1" stroke-dasharray="3 2"/>
+      <rect x="362" y="43" width="24" height="38" rx="3" fill="none" stroke="rgba(8,145,178,.35)" stroke-width="1" stroke-dasharray="3 2"/>
+      <text x="290" y="66" text-anchor="middle" font-size="13" fill="#0891b2" opacity=".7">↑</text>
+      <text x="318" y="66" text-anchor="middle" font-size="13" fill="#0891b2" opacity=".7">↑</text>
+      <text x="346" y="66" text-anchor="middle" font-size="13" fill="#0891b2" opacity=".7">↑</text>
+      <text x="374" y="66" text-anchor="middle" font-size="13" fill="#0891b2" opacity=".7">↑</text>
+      <rect x="271" y="26" width="76" height="14" rx="7" fill="#0891b2"/>
+      <text x="309" y="36" text-anchor="middle" font-size="8" fill="white" font-family="Vazirmatn,sans-serif" font-weight="700">نبود در شلف</text>
+      <text x="367" y="54" text-anchor="middle" font-size="7.5" fill="#0891b2" font-family="Vazirmatn,sans-serif">× (۱+رشد%)</text>
+
+      <!-- ROW 1 RIGHT: تأکیدی (PURPLE) -->
+      <rect x="494" y="36" width="195" height="52" rx="6" fill="rgba(124,58,237,.07)" stroke="#7c3aed" stroke-width="1.5"/>
+      <rect x="502" y="43" width="24" height="38" rx="3" fill="rgba(124,58,237,.18)"/>
+      <rect x="530" y="43" width="24" height="38" rx="3" fill="rgba(124,58,237,.24)"/>
+      <rect x="558" y="43" width="24" height="38" rx="3" fill="rgba(124,58,237,.3)"/>
+      <rect x="586" y="43" width="24" height="38" rx="3" fill="rgba(124,58,237,.18)"/>
+      <rect x="614" y="43" width="24" height="38" rx="3" fill="rgba(124,58,237,.24)"/>
+      <rect x="495" y="26" width="48" height="14" rx="7" fill="#7c3aed"/>
+      <text x="519" y="36" text-anchor="middle" font-size="8" fill="white" font-family="Vazirmatn,sans-serif" font-weight="700">تأکیدی</text>
+      <text x="591" y="54" text-anchor="middle" font-size="7.5" fill="#7c3aed" font-family="Vazirmatn,sans-serif">رشد تأکیدی%</text>
+
+      <!-- AISLE -->
+      <line x1="28" y1="116" x2="812" y2="116" stroke="rgba(0,0,0,.07)" stroke-width="1" stroke-dasharray="8 5"/>
+      <text x="420" y="133" text-anchor="middle" font-size="8" fill="#94a3b8" font-family="Vazirmatn,sans-serif">راهرو اصلی</text>
+
+      <!-- ROW 2 LEFT: Must-Have (RED) -->
+      <rect x="46" y="150" width="195" height="52" rx="6" fill="rgba(220,38,38,.05)" stroke="#dc2626" stroke-width="2"/>
+      <rect x="54" y="157" width="24" height="38" rx="3" fill="rgba(220,38,38,.18)"/>
+      <rect x="82" y="157" width="24" height="38" rx="3" fill="rgba(220,38,38,.24)"/>
+      <rect x="110" y="157" width="24" height="38" rx="3" fill="rgba(220,38,38,.18)"/>
+      <rect x="138" y="157" width="24" height="38" rx="3" fill="rgba(220,38,38,.12)"/>
+      <rect x="47" y="140" width="58" height="14" rx="7" fill="#dc2626"/>
+      <text x="76" y="150" text-anchor="middle" font-size="8" fill="white" font-family="Vazirmatn,sans-serif" font-weight="700">Must-Have</text>
+      <text x="143" y="168" text-anchor="middle" font-size="7.5" fill="#dc2626" font-family="Vazirmatn,sans-serif">حداقل الزامی</text>
+
+      <!-- ROW 2 MID: New Product (GOLD dashed) -->
+      <rect x="270" y="150" width="195" height="52" rx="6" fill="rgba(217,119,6,.05)" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 3"/>
+      <rect x="278" y="157" width="24" height="38" rx="3" fill="rgba(217,119,6,.12)" stroke="#d97706" stroke-width="1"/>
+      <rect x="306" y="157" width="24" height="38" rx="3" fill="rgba(217,119,6,.08)" stroke="#d97706" stroke-width="1"/>
+      <text x="290" y="180" text-anchor="middle" font-size="11" fill="#d97706" font-weight="900">N</text>
+      <text x="318" y="180" text-anchor="middle" font-size="11" fill="#d97706" font-weight="900">E</text>
+      <text x="400" y="180" text-anchor="middle" font-size="20" fill="#d97706" opacity=".25">?</text>
+      <rect x="271" y="140" width="70" height="14" rx="7" fill="#d97706"/>
+      <text x="306" y="150" text-anchor="middle" font-size="8" fill="white" font-family="Vazirmatn,sans-serif" font-weight="700">محصول جدید</text>
+      <text x="367" y="168" text-anchor="middle" font-size="7.5" fill="#d97706" font-family="Vazirmatn,sans-serif">نیاز به تصمیم</text>
+
+      <!-- ROW 2 RIGHT: OOS (GRAY) -->
+      <g opacity=".45">
+        <rect x="494" y="150" width="195" height="52" rx="6" fill="rgba(148,163,184,.07)" stroke="#94a3b8" stroke-width="1.5"/>
+        <rect x="502" y="157" width="24" height="38" rx="3" fill="rgba(148,163,184,.12)"/>
+        <rect x="530" y="157" width="24" height="38" rx="3" fill="rgba(148,163,184,.08)"/>
+        <line x1="506" y1="161" x2="522" y2="191" stroke="#94a3b8" stroke-width="1.5"/>
+        <line x1="522" y1="161" x2="506" y2="191" stroke="#94a3b8" stroke-width="1.5"/>
+        <line x1="534" y1="161" x2="550" y2="191" stroke="#94a3b8" stroke-width="1.5"/>
+        <line x1="550" y1="161" x2="534" y2="191" stroke="#94a3b8" stroke-width="1.5"/>
+        <rect x="495" y="140" width="56" height="14" rx="7" fill="#94a3b8"/>
+        <text x="523" y="150" text-anchor="middle" font-size="8" fill="white" font-family="Vazirmatn,sans-serif" font-weight="700">ناموجود</text>
+      </g>
+
+      <!-- Checkout -->
+      <rect x="190" y="238" width="110" height="28" rx="5" fill="rgba(30,41,59,.05)" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="245" y="256" text-anchor="middle" font-size="8" fill="#64748b" font-family="Vazirmatn,sans-serif">صندوق ۱</text>
+      <rect x="330" y="238" width="110" height="28" rx="5" fill="rgba(30,41,59,.05)" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="385" y="256" text-anchor="middle" font-size="8" fill="#64748b" font-family="Vazirmatn,sans-serif">صندوق ۲</text>
+      <rect x="470" y="238" width="110" height="28" rx="5" fill="rgba(30,41,59,.05)" stroke="#cbd5e1" stroke-width="1"/>
+      <text x="525" y="256" text-anchor="middle" font-size="8" fill="#64748b" font-family="Vazirmatn,sans-serif">صندوق ۳</text>
+
+      <!-- Agent animated path -->
+      <path id="ap" d="M420,285 L420,240 L143,240 L143,176 L367,176 L591,176 L591,62 L367,62 L143,62" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" opacity=".2"/>
+      <circle r="10" fill="#2563eb" opacity=".9">
+        <animateMotion dur="9s" repeatCount="indefinite">
+          <mpath href="#ap"/>
+        </animateMotion>
+      </circle>
+      <circle r="16" fill="none" stroke="#2563eb" stroke-width="1.5" opacity=".3">
+        <animate attributeName="r" values="12;20;12" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values=".4;0;.4" dur="2s" repeatCount="indefinite"/>
+        <animateMotion dur="9s" repeatCount="indefinite">
+          <mpath href="#ap"/>
+        </animateMotion>
+      </circle>
+
+      <!-- AI node top right -->
+      <circle cx="755" cy="84" r="26" fill="rgba(124,58,237,.08)" stroke="#7c3aed" stroke-width="1.5">
+        <animate attributeName="r" values="24;28;24" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="755" cy="84" r="16" fill="rgba(124,58,237,.12)" stroke="#7c3aed" stroke-width="1"/>
+      <text x="755" y="88" text-anchor="middle" font-size="9" fill="#7c3aed" font-family="Vazirmatn,sans-serif" font-weight="800">AI</text>
+      <text x="755" y="120" text-anchor="middle" font-size="7.5" fill="#7c3aed" font-family="Vazirmatn,sans-serif">پردازش</text>
+
+      <!-- Legend bottom right -->
+      <g transform="translate(700,155)">
+        <text y="0" font-size="8" fill="#475569" font-family="Vazirmatn,sans-serif" font-weight="700">راهنما</text>
+        <rect y="6" width="9" height="9" rx="2" fill="rgba(5,150,105,.2)" stroke="#059669" stroke-width="1"/>
+        <text x="13" y="14" font-size="7" fill="#64748b" font-family="Vazirmatn,sans-serif">دیده شد</text>
+        <rect y="20" width="9" height="9" rx="2" fill="rgba(8,145,178,.2)" stroke="#0891b2" stroke-width="1"/>
+        <text x="13" y="28" font-size="7" fill="#64748b" font-family="Vazirmatn,sans-serif">نبود در شلف</text>
+        <rect y="34" width="9" height="9" rx="2" fill="rgba(124,58,237,.2)" stroke="#7c3aed" stroke-width="1"/>
+        <text x="13" y="42" font-size="7" fill="#64748b" font-family="Vazirmatn,sans-serif">تأکیدی</text>
+        <rect y="48" width="9" height="9" rx="2" fill="rgba(220,38,38,.15)" stroke="#dc2626" stroke-width="1"/>
+        <text x="13" y="56" font-size="7" fill="#64748b" font-family="Vazirmatn,sans-serif">Must-Have</text>
+        <rect y="62" width="9" height="9" rx="2" fill="rgba(217,119,6,.12)" stroke="#d97706" stroke-width="1"/>
+        <text x="13" y="70" font-size="7" fill="#64748b" font-family="Vazirmatn,sans-serif">محصول جدید</text>
+        <rect y="76" width="9" height="9" rx="2" fill="rgba(148,163,184,.1)" stroke="#94a3b8" stroke-width="1" opacity=".5"/>
+        <text x="13" y="84" font-size="7" fill="#94a3b8" font-family="Vazirmatn,sans-serif">ناموجود</text>
+      </g>
+    </svg>
   </div>
 </div>
 
@@ -723,11 +1038,14 @@ const SLIDES = [
   { title:'صفحه اصلی', context:'پروژه افق ۳۶۰. مجری: فناوران فرایند فردا. کارفرما: سیلانه سبز. موضوع: پیش‌فاکتور هوشمند، جوایز پلکانی، یکپارچه‌سازی با راهکاران. تیم ۲ نفره، ۱۰-۱۳ هفته، ۸۷۰ میلیون تومان.' },
   { title:'معرفی کلی پلتفرم', context:'افق ۳۶۰: نرم‌افزار بینایی ماشین با AI برای پایش شلف. فروشنده وارد وب‌اپ می‌شود، بر اساس GPS فروشگاه را انتخاب می‌کند، از شلف عکس می‌گیرد. محصولات برند خودی و رقبا شناسایی می‌شوند. فیچر تطبیق و جایزه فعال است. فیچر جدید: پیشنهاد سفارش هوشمند + ثبت در راهکاران.' },
   { title:'مشکل امروز', context:'مشکلات: ثبت سلیقه‌ای فاکتور، نادیده گرفتن الگوی خرید گذشته، فقدان منطق رشد سیستماتیک، ورود دستی مجدد در ERP.' },
+  { title:'ماتریس حالت‌های مواجهه', context:'۶ حالت مواجهه با محصول: ۱-دیده شد→میانگین. ۲-نبود→میانگین×رشد%. ۳-تأکیدی→رشد بیشتر. ۴-Must-Have→حداقل الزامی+هشدار. ۵-محصول جدید→مقدار راه‌اندازی سیلانه (نیاز به تصمیم). ۶-ناموجود انبار→حذف از لیست.' },
   { title:'فیچر ۱: پیش‌فاکتور هوشمند', context:'اگر محصول در شلف باشد: پیشنهاد = میانگین خرید گذشته. اگر نباشد: پیشنهاد = میانگین × (۱+درصد رشد). مثال: مام میانگین ۱۰، رشد ۱۰٪، پیشنهاد ۱۱. درصد رشد قابل تنظیم توسط سیلانه. رشد فروشگاه‌به‌فروشگاه نسبت به تاریخچه خودش.' },
   { title:'فیچر ۲: محصولات تأکیدی', context:'به‌ازای هر گروه مشتری (خرده‌فروشی، عمده‌فروشی، داروخانه)، فهرست محصولات تأکیدی جداگانه تعریف می‌شود. روی این محصولات درصد رشد بیشتری اعمال می‌شود. کاملاً توسط سیلانه قابل تنظیم.' },
   { title:'فیچر ۴: جوایز پلکانی', context:'جوایز بر اساس حجم فاکتور: ۲۵-۵۰ میلیون → ۲ گزینه. ۵۰-۷۵ میلیون → ۳ گزینه. بالای ۷۵ میلیون → ۳ گزینه. فروشگاه یک گزینه انتخاب می‌کند. به‌ازای هر گروه مشتری سطوح متفاوت.' },
   { title:'فیچر ۵: ثبت برند‌به‌برند', context:'محصولات هر برند جداگانه نمایش. تعداد با + و − قابل تنظیم. رفت‌وبرگشت بین برندها. UX بهینه برای استفاده سریع در فروشگاه.' },
   { title:'فیچر ۶: ربات هوشمند', context:'راهکاران API ندارد؛ ربات هوشمند فاکتور فروش را به‌صورت خودکار در راهکاران ثبت می‌کند. نتیجه موفق/ناموفق گزارش می‌شود. وابسته به رابط کاربری راهکاران؛ هر آپدیت نیاز به اصلاح ربات دارد.' },
+  { title:'وایرفریم صفحات پیشنهادی', context:'سه صفحه اصلی اپلیکیشن: ۱-لیست پیشنهاد هوشمند با badge رنگی برای هر حالت (دیده شد/نبود/الزامی/جدید/ناموجود). ۲-ویرایش برند‌به‌برند با تب‌های برند و +/- تعداد. ۳-انتخاب جایزه + تأیید نهایی و ثبت در راهکاران.' },
+  { title:'نمای بالا — تصمیم در شلف', context:'نمای بالا از فروشگاه واقعی با رنگ‌بندی: سبز=دیده شد، آبی=نبود، بنفش=تأکیدی، قرمز=Must-Have، طلایی=محصول جدید، خاکستری=ناموجود. ربات AI فروشگاه را اسکن می‌کند و برای هر محصول قانون مربوطه اجرا می‌شود.' },
   { title:'گردش کار کامل', context:'۱) ورود و انتخاب فروشگاه با GPS. ۲) آنالیز فروش گذشته. ۳) عکس‌برداری و AI. ۴) تولید پیش‌فاکتور. ۵) نمایش برند‌به‌برند و ویرایش. ۶) ثبت خودکار در راهکاران.' },
   { title:'فازبندی و زمان‌بندی', context:'فاز ۱: تحلیل و طراحی ~۲ هفته. فاز ۲: هسته هوشمند ~۵-۶ هفته. فاز ۳: ربات هوشمند ~۳-۴ هفته. فاز ۴: آزمون پذیرش (UAT) ~۲-۳ هفته. جمع: ۱۰-۱۳ هفته. تیم ۲ نفره.' },
   { title:'قیمت‌گذاری', context:'هزینه اجرای پروژه: ۸۷۰ میلیون تومان بدون مالیات. شامل ۳ ماه پشتیبانی. همراهی میدانی. پرداخت: ۳۰٪ امضا (۲۶۱M)، ۲۵٪ فاز ۲ (۲۱۷M)، ۲۵٪ فاز ۳ (۲۱۷M)، ۲۰٪ UAT (۱۷۴M).' },
@@ -757,7 +1075,7 @@ function go(dir){
   setStagger(slides[cur]);
   slides[cur].classList.add('active');
   ui();
-  if(cur===10) setTimeout(()=>countUp(document.getElementById('price-num'),870,1100),350);
+  if(cur===13) setTimeout(()=>countUp(document.getElementById('price-num'),870,1100),350);
 }
 
 function ui(){
