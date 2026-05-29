@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>افق ۳۶۰ | وایرفریم‌های پیشنهادی</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563eb;--teal:#0891b2;--green:#059669;--gold:#d97706;
+  --red:#dc2626;--purple:#7c3aed;--orange:#ea580c;
+  --bg:#f1f5f9;--card:#fff;--border:#e2e8f0;--border2:#cbd5e1;
+  --text:#0f172a;--text2:#475569;--text3:#94a3b8;
+  --wf-bg:#f8fafc;--wf-line:#e2e8f0;--wf-block:#e8edf3;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:32px 24px 64px;}
+
+h1.page-title{font-size:22px;font-weight:900;margin-bottom:6px;}
+.page-sub{font-size:13px;color:var(--text2);margin-bottom:32px;}
+
+/* SECTION */
+.section{margin-bottom:52px;}
+.section-label{font-size:10px;font-weight:800;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:8px;}
+.section-title{font-size:18px;font-weight:800;margin-bottom:4px;}
+.section-desc{font-size:12px;color:var(--text2);margin-bottom:20px;line-height:1.7;}
+
+/* SCREEN ROW */
+.screen-row{display:flex;gap:24px;align-items:flex-start;overflow-x:auto;padding-bottom:8px;}
+.screen-col{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.screen-num{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.screen-name{font-size:11px;font-weight:700;color:var(--text2);text-align:center;}
+
+/* PHONE MOCKUP */
+.phone{width:240px;background:#dde3ec;border-radius:36px;padding:10px;box-shadow:0 12px 40px rgba(0,0,0,.14),inset 0 0 0 1.5px rgba(0,0,0,.1);}
+.phone-notch{width:70px;height:10px;background:#94a3b8;border-radius:5px;margin:0 auto 8px;}
+.phone-screen{background:var(--wf-bg);border-radius:26px;overflow:hidden;border:1px solid rgba(0,0,0,.06);min-height:420px;display:flex;flex-direction:column;}
+
+/* ARROW between screens */
+.arr{display:flex;flex-direction:column;align-items:center;gap:6px;margin-top:80px;flex-shrink:0;}
+.arr svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:1.8;}
+.arr span{font-size:9px;color:var(--text2);text-align:center;max-width:60px;}
+
+/* TOPBAR */
+.topbar{height:44px;display:flex;align-items:center;padding:0 14px;gap:8px;flex-shrink:0;}
+.topbar svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:1.8;}
+.topbar-title{font-size:12px;font-weight:700;color:#fff;flex:1;}
+.topbar-sub{font-size:9px;color:rgba(255,255,255,.7);}
+
+/* BODY */
+.sbody{flex:1;overflow:hidden;padding:12px;}
+
+/* LABELS */
+.lbl{font-size:9px;font-weight:700;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;}
+
+/* PRODUCT ROW */
+.prow{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--wf-line);}
+.pdot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.pname{font-size:11px;color:var(--text2);flex:1;line-height:1.3;}
+.pbadge{font-size:8px;font-weight:700;padding:1px 6px;border-radius:4px;flex-shrink:0;}
+.pqty{display:flex;align-items:center;gap:3px;flex-shrink:0;}
+.pm{width:20px;height:20px;border:1.5px solid var(--border2);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--text2);font-weight:600;}
+.pn{width:22px;text-align:center;font-size:12px;font-weight:800;}
+
+/* STATUS BADGES */
+.seen{background:rgba(5,150,105,.1);color:var(--green);}
+.missing{background:rgba(8,145,178,.1);color:var(--teal);}
+.must{background:rgba(220,38,38,.1);color:var(--red);}
+.newp{background:rgba(217,119,6,.1);color:var(--gold);}
+.oos{background:rgba(148,163,184,.1);color:var(--text3);}
+.emph{background:rgba(124,58,237,.1);color:var(--purple);}
+
+/* TOTAL BAR */
+.total-bar{background:var(--wf-block);border-top:1px solid var(--wf-line);padding:10px 12px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.tl{font-size:9px;color:var(--text2);}
+.tn{font-size:15px;font-weight:900;color:var(--blue);}
+.tact{border-radius:8px;padding:7px 14px;font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--blue),var(--teal));}
+
+/* BRAND TABS */
+.brand-tabs{display:flex;border-bottom:1.5px solid var(--wf-line);flex-shrink:0;}
+.btab{flex:1;padding:8px 4px;text-align:center;font-size:10px;font-weight:700;color:var(--text3);border-bottom:2.5px solid transparent;cursor:pointer;}
+.btab.active{color:var(--blue);border-bottom-color:var(--blue);}
+
+/* MUST-HAVE ALERT */
+.mh-alert{background:rgba(220,38,38,.05);border:1.5px solid rgba(220,38,38,.2);border-radius:8px;padding:8px 10px;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.mh-alert svg{width:13px;height:13px;stroke:var(--red);fill:none;stroke-width:2;flex-shrink:0;}
+.mh-alert-t{font-size:10px;font-weight:700;color:var(--red);}
+
+/* NEW PRODUCT HINT */
+.new-hint{background:rgba(217,119,6,.05);border:1.5px dashed rgba(217,119,6,.3);border-radius:8px;padding:8px 10px;margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.new-hint svg{width:13px;height:13px;stroke:var(--gold);fill:none;stroke-width:2;flex-shrink:0;}
+.new-hint-t{font-size:10px;font-weight:700;color:var(--gold);}
+
+/* TIER SELECTOR */
+.tier-row{display:flex;gap:6px;margin-bottom:10px;}
+.tier-opt{flex:1;border-radius:8px;padding:8px 6px;text-align:center;border:1.5px solid var(--wf-line);cursor:pointer;transition:all .2s;}
+.tier-opt.sel{border-color:var(--gold);background:rgba(217,119,6,.05);}
+.tier-lbl{font-size:9px;color:var(--text2);}
+.tier-val{font-size:13px;font-weight:800;color:var(--gold);}
+
+/* REWARD OPTION */
+.reward{border-radius:9px;padding:10px 12px;margin-bottom:8px;border:1.5px solid var(--wf-line);display:flex;align-items:center;gap:9px;cursor:pointer;}
+.reward.sel{border-color:var(--gold);background:rgba(217,119,6,.04);}
+.reward-ico{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.reward-ico svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8;}
+.reward-t{font-size:11px;font-weight:700;}
+.reward-d{font-size:9px;color:var(--text2);margin-top:2px;}
+.reward-chk{margin-right:auto;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.reward-chk svg{width:9px;height:9px;stroke:var(--gold);fill:none;stroke-width:2.5;}
+
+/* GPS SCREEN */
+.gps-map{background:linear-gradient(135deg,#e0f2fe,#e8f5e9);height:160px;position:relative;overflow:hidden;border-radius:0;}
+.map-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.04) 1px,transparent 1px);background-size:20px 20px;}
+.map-store{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:60px;height:50px;background:rgba(37,99,235,.15);border:2px solid rgba(37,99,235,.4);border-radius:6px;}
+.map-store-lbl{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-size:8px;font-weight:700;color:var(--blue);white-space:nowrap;}
+.map-pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-60%);width:18px;height:18px;}
+.map-pin svg{width:18px;height:18px;}
+.map-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-40%);width:30px;height:30px;border-radius:50%;border:2px solid rgba(37,99,235,.3);animation:r 2s ease-out infinite;}
+@keyframes r{0%{width:20px;height:20px;opacity:.8}100%{width:50px;height:50px;margin:-10px;opacity:0}}
+
+/* SCAN SCREEN */
+.scan-view{height:160px;background:#0f172a;position:relative;overflow:hidden;}
+.scan-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:24px 24px;}
+.scan-corner{position:absolute;width:20px;height:20px;border-color:var(--teal);border-style:solid;border-width:0;}
+.scan-corner.tl{top:14px;right:14px;border-top-width:2px;border-right-width:2px;}
+.scan-corner.tr{top:14px;left:14px;border-top-width:2px;border-left-width:2px;}
+.scan-corner.bl{bottom:14px;right:14px;border-bottom-width:2px;border-right-width:2px;}
+.scan-corner.br{bottom:14px;left:14px;border-bottom-width:2px;border-left-width:2px;}
+.scan-beam-line{position:absolute;left:14px;right:14px;height:2px;background:linear-gradient(90deg,transparent,var(--teal),transparent);top:50%;animation:sb 1.5s ease-in-out infinite;}
+@keyframes sb{0%,100%{top:14px}50%{top:calc(100% - 14px)}}
+.shelf-detect{position:absolute;left:20px;top:25px;right:20px;height:30px;border:1px dashed rgba(6,182,212,.5);border-radius:4px;display:flex;align-items:center;gap:4px;padding:0 8px;}
+.det-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);}
+.det-lbl{font-size:8px;color:var(--teal);font-weight:600;}
+.shelf-detect2{position:absolute;left:20px;top:65px;right:20px;height:30px;border:1px dashed rgba(6,182,212,.3);border-radius:4px;}
+
+/* SUMMARY CARD */
+.sum-card{background:rgba(37,99,235,.04);border:1px solid rgba(37,99,235,.15);border-radius:10px;padding:10px 12px;margin-bottom:12px;}
+.sum-row{display:flex;justify-content:space-between;font-size:10px;margin-bottom:5px;}
+.sum-label{color:var(--text2);}
+.sum-val{font-weight:700;color:var(--text);}
+.sum-total{display:flex;justify-content:space-between;padding-top:7px;border-top:1px solid rgba(37,99,235,.12);font-size:13px;font-weight:900;}
+.sum-total-lbl{color:var(--text2);}
+.sum-total-val{color:var(--blue);}
+
+/* CONFIRM BTN */
+.confirm-btn{width:100%;border-radius:10px;padding:12px;text-align:center;font-size:13px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--green),#16a34a);border:none;margin-top:6px;}
+
+/* ERP PROGRESS */
+.erp-step{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px solid var(--wf-line);}
+.erp-step svg{width:13px;height:13px;flex-shrink:0;}
+.erp-step-t{font-size:11px;}
+.erp-step-s{font-size:9px;color:var(--text2);margin-top:1px;}
+
+/* LEGEND */
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text2);}
+.leg-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+
+/* ANNOTATION */
+.annot{position:absolute;z-index:10;}
+.annot-line{stroke-dasharray:4 3;}
+
+/* FULL-WIDTH WIREFRAME (tablet) */
+.tablet{width:580px;background:#dde3ec;border-radius:20px;padding:10px;box-shadow:0 12px 40px rgba(0,0,0,.12),inset 0 0 0 1.5px rgba(0,0,0,.1);}
+.tablet-screen{background:var(--wf-bg);border-radius:12px;overflow:hidden;border:1px solid rgba(0,0,0,.05);}
+
+/* SEPARATOR */
+.sep{height:1px;background:var(--border);margin:48px 0;}
+
+/* CALLOUT */
+.callout{background:#fff;border:1.5px solid var(--border2);border-radius:10px;padding:10px 14px;font-size:11px;color:var(--text2);line-height:1.7;max-width:220px;}
+.callout strong{color:var(--text);display:block;margin-bottom:3px;font-size:12px;}
+</style>
+</head>
+<body>
+
+<div style="max-width:1100px;margin:0 auto">
+
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:12px">
+    <div>
+      <div style="font-size:10px;font-weight:700;color:var(--teal);letter-spacing:3px;margin-bottom:6px">WIREFRAMES · افق ۳۶۰</div>
+      <h1 class="page-title">وایرفریم صفحات پیشنهادی</h1>
+      <p class="page-sub" style="margin-bottom:0">جریان کامل اپلیکیشن فروشنده میدانی — از ورود تا ثبت فاکتور</p>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <a href="index.html" style="font-size:11px;color:var(--teal);text-decoration:none;border:1px solid rgba(8,145,178,.2);padding:5px 12px;border-radius:20px;display:flex;align-items:center;gap:5px">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>بازگشت به پرزنتیشن
+      </a>
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin-bottom:32px;display:flex;flex-wrap:wrap;gap:16px;align-items:center">
+    <div style="font-size:10px;font-weight:700;color:var(--text2);">راهنمای رنگ‌ها:</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--green)"></div>دیده شد</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--teal)"></div>نبود در شلف</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--purple)"></div>تأکیدی</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--red)"></div>Must-Have</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--gold)"></div>محصول جدید</div>
+    <div class="leg-item"><div class="leg-dot" style="background:var(--text3)"></div>ناموجود انبار</div>
+  </div>
+
+  <!-- ─── FLOW 1: ENTRY ─── -->
+  <div class="section">
+    <div class="section-label">جریان ۱</div>
+    <div class="section-title">ورود و انتخاب فروشگاه</div>
+    <div class="section-desc">فروشنده وارد اپ می‌شود · GPS موقعیت را تشخیص می‌دهد · فروشگاه انتخاب می‌شود · بازدید شروع می‌شود</div>
+    <div class="screen-row">
+
+      <!-- Screen 1A: Login -->
+      <div class="screen-col">
+        <div class="screen-num">۱</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--blue),var(--teal))">
+              <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+              <div class="topbar-title">افق ۳۶۰</div>
+            </div>
+            <div class="sbody" style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;padding:24px">
+              <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--teal));display:flex;align-items:center;justify-content:center">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
+              </div>
+              <div style="text-align:center">
+                <div style="font-size:16px;font-weight:900;margin-bottom:4px">افق ۳۶۰</div>
+                <div style="font-size:11px;color:var(--text2)">ورود به حساب کاربری</div>
+              </div>
+              <div style="width:100%;display:flex;flex-direction:column;gap:8px">
+                <div style="background:var(--wf-block);border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--text2)">نام کاربری</div>
+                <div style="background:var(--wf-block);border:1.5px solid var(--border);border-radius:8px;padding:10px 12px;font-size:11px;color:var(--text2)">رمز عبور</div>
+                <div style="background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:8px;padding:11px;text-align:center;font-size:12px;font-weight:700;color:#fff">ورود</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">ورود</div>
+      </div>
+
+      <div class="arr"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg><span>احراز هویت</span></div>
+
+      <!-- Screen 1B: GPS + Store Select -->
+      <div class="screen-col">
+        <div class="screen-num">۲</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--blue),var(--teal))">
+              <svg viewBox="0 0 24 24"><path d="M12 21s-8-6-8-12a8 8 0 1116 0c0 6-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div><div class="topbar-title">انتخاب فروشگاه</div><div class="topbar-sub">۳ فروشگاه در نزدیکی شما</div></div>
+            </div>
+            <!-- Map -->
+            <div class="gps-map">
+              <div class="map-grid"></div>
+              <div class="map-ring"></div>
+              <div class="map-store"><div class="map-store-lbl">سیلانه سبز #۴۷</div></div>
+              <div class="map-pin">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#dc2626"/><circle cx="12" cy="9" r="2.5" fill="#fff"/></svg>
+              </div>
+            </div>
+            <div class="sbody">
+              <div class="lbl">فروشگاه‌های نزدیک</div>
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="background:rgba(37,99,235,.05);border:1.5px solid rgba(37,99,235,.2);border-radius:9px;padding:10px 12px;display:flex;align-items:center;gap:10px">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M12 21s-8-6-8-12a8 8 0 1116 0c0 6-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  <div style="flex:1"><div style="font-size:11px;font-weight:700">سیلانه سبز #۴۷</div><div style="font-size:9px;color:var(--text2)">۱۵۰ متر · خیابان ولیعصر</div></div>
+                  <div style="font-size:9px;font-weight:700;color:var(--blue)">انتخاب</div>
+                </div>
+                <div style="border:1px solid var(--wf-line);border-radius:9px;padding:10px 12px;display:flex;align-items:center;gap:10px;opacity:.6">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" stroke-width="2"><path d="M12 21s-8-6-8-12a8 8 0 1116 0c0 6-8 12-8 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                  <div style="flex:1"><div style="font-size:11px;font-weight:700">سوپرمارکت نور</div><div style="font-size:9px;color:var(--text2)">۳۸۰ متر · خیابان مطهری</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">انتخاب فروشگاه</div>
+      </div>
+
+      <div class="arr"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg><span>تأیید</span></div>
+
+      <!-- Screen 1C: Visit Overview -->
+      <div class="screen-col">
+        <div class="screen-num">۳</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--blue),var(--teal))">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+              <div><div class="topbar-title">سیلانه سبز #۴۷</div><div class="topbar-sub">آخرین بازدید: ۳ هفته پیش</div></div>
+            </div>
+            <div class="sbody">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+                <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.15);border-radius:9px;padding:10px;text-align:center">
+                  <div style="font-size:18px;font-weight:900;color:var(--green)">۲۴</div>
+                  <div style="font-size:9px;color:var(--text2)">محصول ثبت‌شده</div>
+                </div>
+                <div style="background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.15);border-radius:9px;padding:10px;text-align:center">
+                  <div style="font-size:18px;font-weight:900;color:var(--blue)">۴۸M</div>
+                  <div style="font-size:9px;color:var(--text2)">آخرین فاکتور</div>
+                </div>
+              </div>
+              <div style="background:rgba(217,119,6,.05);border:1.5px solid rgba(217,119,6,.2);border-radius:9px;padding:10px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <div style="font-size:10px;color:var(--gold);font-weight:700">آستانه جایزه: ۵۰M</div>
+              </div>
+              <div style="background:linear-gradient(135deg,var(--blue),var(--teal));border-radius:10px;padding:12px;text-align:center;font-size:13px;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><circle cx="12" cy="14" r="3"/></svg>
+                شروع بازدید
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">خلاصه فروشگاه</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- ─── FLOW 2: SCAN ─── -->
+  <div class="section">
+    <div class="section-label">جریان ۲</div>
+    <div class="section-title">اسکن شلف با هوش مصنوعی</div>
+    <div class="section-desc">فروشنده دوربین را باز می‌کند · از هر شلف عکس می‌گیرد · AI محصولات را شناسایی می‌کند</div>
+    <div class="screen-row">
+
+      <!-- Screen 2A: Camera -->
+      <div class="screen-col">
+        <div class="screen-num">۴</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:#0f172a">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+              <div class="topbar-title">اسکن شلف</div>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2"/></svg>
+            </div>
+            <div class="scan-view">
+              <div class="scan-grid"></div>
+              <div class="scan-corner tl"></div>
+              <div class="scan-corner tr"></div>
+              <div class="scan-corner bl"></div>
+              <div class="scan-corner br"></div>
+              <div class="scan-beam-line"></div>
+              <div class="shelf-detect">
+                <div class="det-dot"></div>
+                <div class="det-lbl">شلف مام شناسایی شد</div>
+              </div>
+              <div class="shelf-detect2"></div>
+            </div>
+            <div class="sbody" style="background:#0f172a;flex:1">
+              <div style="display:flex;gap:8px;margin-bottom:10px">
+                <div style="background:rgba(5,150,105,.15);border:1px solid rgba(5,150,105,.3);border-radius:6px;padding:5px 9px;font-size:9px;color:var(--green);font-weight:700">۸ محصول شناسایی شد</div>
+                <div style="background:rgba(220,38,38,.15);border:1px solid rgba(220,38,38,.3);border-radius:6px;padding:5px 9px;font-size:9px;color:var(--red);font-weight:700">۲ غایب</div>
+              </div>
+              <div style="display:flex;justify-content:center">
+                <div style="width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><circle cx="12" cy="14" r="3"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+                </div>
+              </div>
+              <div style="text-align:center;margin-top:8px;font-size:9px;color:rgba(255,255,255,.4)">برای عکس‌برداری ضربه بزنید</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">دوربین اسکن</div>
+      </div>
+
+      <div class="arr"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg><span>پردازش AI</span></div>
+
+      <!-- Screen 2B: AI Results -->
+      <div class="screen-col">
+        <div class="screen-num">۵</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,#7c3aed,#4f46e5)">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M2 12h2M20 12h2"/></svg>
+              <div><div class="topbar-title">نتیجه پردازش</div><div class="topbar-sub">هوش مصنوعی</div></div>
+            </div>
+            <div class="sbody">
+              <div class="lbl">شلف — مام</div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--green)"></div>
+                <div class="pname">مام ۲۵۰ml</div>
+                <div class="pbadge seen">دیده شد</div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--green)"></div>
+                <div class="pname">مام ۵۰۰ml</div>
+                <div class="pbadge seen">دیده شد</div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--teal)"></div>
+                <div class="pname">مام کرم</div>
+                <div class="pbadge missing">نبود</div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--red)"></div>
+                <div class="pname">سان ۲۰۰ml · الزامی</div>
+                <div class="pbadge must">نبود</div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--gold)"></div>
+                <div class="pname">ایکس · محصول جدید</div>
+                <div class="pbadge newp">جدید</div>
+              </div>
+            </div>
+            <div class="total-bar">
+              <div style="font-size:9px;color:var(--text2)">۵ محصول بررسی شد</div>
+              <div style="background:linear-gradient(135deg,#7c3aed,#4f46e5);border-radius:7px;padding:6px 12px;font-size:10px;font-weight:700;color:#fff">تولید پیشنهاد</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">نتیجه AI</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- ─── FLOW 3: INVOICE ─── -->
+  <div class="section">
+    <div class="section-label">جریان ۳</div>
+    <div class="section-title">پیش‌فاکتور هوشمند و ویرایش</div>
+    <div class="section-desc">سیستم بر اساس ۶ قانون پیشنهاد می‌دهد · فروشنده برند‌به‌برند بررسی و ویرایش می‌کند</div>
+    <div class="screen-row">
+
+      <!-- Screen 3A: Smart Suggestion List -->
+      <div class="screen-col">
+        <div class="screen-num">۶</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--blue),var(--teal))">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16h16V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <div><div class="topbar-title">پیشنهاد هوشمند</div><div class="topbar-sub">بر اساس تاریخچه + AI</div></div>
+            </div>
+            <div class="sbody">
+              <!-- Must-Have Alert -->
+              <div class="mh-alert">
+                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
+                <div><div class="mh-alert-t">Must-Have: سان ۲۰۰ml نبود</div><div style="font-size:9px;color:var(--red);opacity:.8">حداقل ۶ عدد الزامی است</div></div>
+              </div>
+              <div class="lbl">همه برندها</div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--green)"></div>
+                <div class="pname">مام ۲۵۰ml</div>
+                <div class="pqty"><div class="pm">−</div><div class="pn" style="color:var(--text)">۱۰</div><div class="pm">+</div></div>
+              </div>
+              <div class="prow" style="background:rgba(8,145,178,.03);margin:0 -12px;padding:8px 12px">
+                <div class="pdot" style="background:var(--teal)"></div>
+                <div class="pname">مام کرم <span style="font-size:8px;color:var(--teal)">↑ رشد</span></div>
+                <div class="pqty"><div class="pm">−</div><div class="pn" style="color:var(--teal)">۷</div><div class="pm">+</div></div>
+              </div>
+              <div class="prow" style="background:rgba(220,38,38,.03);margin:0 -12px;padding:8px 12px;border-right:3px solid var(--red)">
+                <div class="pdot" style="background:var(--red)"></div>
+                <div class="pname" style="color:var(--red);font-weight:700">سان ۲۰۰ml <span style="font-size:8px">الزامی</span></div>
+                <div class="pqty"><div class="pm">−</div><div class="pn" style="color:var(--red)">۶</div><div class="pm">+</div></div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--purple)"></div>
+                <div class="pname">نوا کرم <span style="font-size:8px;color:var(--purple)">تأکیدی</span></div>
+                <div class="pqty"><div class="pm">−</div><div class="pn" style="color:var(--purple)">۱۱</div><div class="pm">+</div></div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--gold)"></div>
+                <div class="pname" style="color:var(--gold)">ایکس · جدید</div>
+                <div class="pqty"><div class="pm">−</div><div class="pn" style="color:var(--gold)">۵</div><div class="pm">+</div></div>
+              </div>
+              <div class="prow" style="opacity:.35">
+                <div class="pdot" style="background:var(--text3)"></div>
+                <div class="pname" style="text-decoration:line-through">وای ۱۰۰ml</div>
+                <div style="font-size:9px;color:var(--text3)">ناموجود</div>
+              </div>
+            </div>
+            <div class="total-bar">
+              <div><div class="tl">جمع برآورد</div><div class="tn">۵۸M</div></div>
+              <div class="tact">ویرایش برند</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">لیست پیشنهاد</div>
+      </div>
+
+      <div class="arr"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg><span>ویرایش</span></div>
+
+      <!-- Screen 3B: Brand-by-Brand Edit -->
+      <div class="screen-col">
+        <div class="screen-num">۷</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--blue),var(--teal))">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+              <div class="topbar-title">ویرایش برند‌به‌برند</div>
+            </div>
+            <div class="brand-tabs">
+              <div class="btab active">مام</div>
+              <div class="btab">سان</div>
+              <div class="btab">نوا</div>
+              <div class="btab">ایکس</div>
+            </div>
+            <div class="sbody">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+                <div class="lbl" style="margin-bottom:0">مام — ۳ محصول</div>
+                <div style="font-size:10px;font-weight:700;color:var(--blue)">۲۴M</div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--green)"></div>
+                <div class="pname" style="font-size:12px">مام ۲۵۰ml<br><span style="font-size:9px;color:var(--text2)">میانگین: ۱۰ · پیشنهاد: ۱۰</span></div>
+                <div class="pqty"><div class="pm">−</div><div class="pn">۱۰</div><div class="pm">+</div></div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--teal)"></div>
+                <div class="pname" style="font-size:12px">مام ۵۰۰ml<br><span style="font-size:9px;color:var(--teal)">میانگین: ۶ · رشد ۱۵٪ ← ۷</span></div>
+                <div class="pqty"><div class="pm">−</div><div class="pn" style="color:var(--teal)">۷</div><div class="pm">+</div></div>
+              </div>
+              <div class="prow">
+                <div class="pdot" style="background:var(--purple)"></div>
+                <div class="pname" style="font-size:12px">مام کرم<br><span style="font-size:9px;color:var(--purple)">تأکیدی · رشد ۲۵٪ ← ۶</span></div>
+                <div class="pqty"><div class="pm">−</div><div class="pn" style="color:var(--purple)">۶</div><div class="pm">+</div></div>
+              </div>
+              <div style="margin-top:10px;background:rgba(37,99,235,.04);border-radius:8px;padding:8px;font-size:10px;color:var(--text2);display:flex;justify-content:space-between">
+                <span>جمع مام:</span><span style="color:var(--blue);font-weight:800">۲۴M</span>
+              </div>
+            </div>
+            <div class="total-bar">
+              <div><div class="tl">کل فاکتور</div><div class="tn">۶۲M</div></div>
+              <div class="tact">تأیید</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">ویرایش برند</div>
+      </div>
+
+      <div class="arr"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg><span>تأیید نهایی</span></div>
+
+      <!-- Screen 3C: New Product -->
+      <div class="screen-col">
+        <div class="screen-num">۷ب</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--gold),#b45309)">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              <div class="topbar-title">محصول جدید</div>
+            </div>
+            <div class="sbody">
+              <div class="new-hint">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                <div><div class="new-hint-t">ایکس — تازه لانچ شده</div><div style="font-size:9px;color:var(--gold);opacity:.8">مقدار پیش‌فرض از سیلانه: ۵</div></div>
+              </div>
+              <div style="background:rgba(217,119,6,.05);border:1.5px solid rgba(217,119,6,.2);border-radius:10px;padding:14px;text-align:center;margin-bottom:12px">
+                <div style="font-size:10px;color:var(--text2);margin-bottom:6px">پیشنهاد سیستم</div>
+                <div style="font-size:32px;font-weight:900;color:var(--gold)">۵</div>
+                <div style="font-size:9px;color:var(--text2)">عدد (قابل تغییر)</div>
+              </div>
+              <div style="display:flex;justify-content:center;gap:12px">
+                <div style="width:44px;height:44px;border:1.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--text2)">−</div>
+                <div style="width:64px;height:44px;border:2px solid var(--gold);border-radius:10px;background:rgba(217,119,6,.05);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:var(--gold)">۵</div>
+                <div style="width:44px;height:44px;border:1.5px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:var(--text2)">+</div>
+              </div>
+            </div>
+            <div class="total-bar">
+              <div style="font-size:9px;color:var(--text2)">بدون تاریخچه</div>
+              <div class="tact" style="background:linear-gradient(135deg,var(--gold),#b45309)">تأیید مقدار</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">محصول جدید</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- ─── FLOW 4: REWARD + SUBMIT ─── -->
+  <div class="section">
+    <div class="section-label">جریان ۴</div>
+    <div class="section-title">انتخاب جایزه و ثبت نهایی</div>
+    <div class="section-desc">بر اساس حجم فاکتور سطح جایزه مشخص می‌شود · یک گزینه انتخاب می‌شود · ربات فاکتور را در راهکاران ثبت می‌کند</div>
+    <div class="screen-row">
+
+      <!-- Screen 4A: Summary -->
+      <div class="screen-col">
+        <div class="screen-num">۸</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--blue),var(--teal))">
+              <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+              <div class="topbar-title">خلاصه فاکتور</div>
+            </div>
+            <div class="sbody">
+              <div class="sum-card">
+                <div class="sum-row"><span class="sum-label">مام</span><span class="sum-val">۲۴M</span></div>
+                <div class="sum-row"><span class="sum-label">سان</span><span class="sum-val">۱۸M</span></div>
+                <div class="sum-row"><span class="sum-label">نوا</span><span class="sum-val">۱۴M</span></div>
+                <div class="sum-row"><span class="sum-label">ایکس · جدید</span><span class="sum-val" style="color:var(--gold)">۶M</span></div>
+                <div class="sum-total"><span class="sum-total-lbl">جمع کل</span><span class="sum-total-val">۶۲M</span></div>
+              </div>
+              <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:9px;padding:10px;display:flex;align-items:center;gap:8px;margin-bottom:10px">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <div style="font-size:10px;color:var(--green);font-weight:700">همه موارد Must-Have تأمین شد</div>
+              </div>
+              <div style="background:rgba(217,119,6,.05);border:1px solid rgba(217,119,6,.2);border-radius:9px;padding:10px;text-align:center">
+                <div style="font-size:9px;color:var(--text2)">سطح جایزه</div>
+                <div style="font-size:14px;font-weight:900;color:var(--gold)">۵۰ – ۷۵ میلیون</div>
+                <div style="font-size:9px;color:var(--text2);margin-top:2px">۳ گزینه جایزه</div>
+              </div>
+            </div>
+            <div class="total-bar">
+              <div><div class="tl">جمع</div><div class="tn">۶۲M</div></div>
+              <div class="tact">انتخاب جایزه</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">خلاصه فاکتور</div>
+      </div>
+
+      <div class="arr"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg><span>ادامه</span></div>
+
+      <!-- Screen 4B: Reward Selection -->
+      <div class="screen-col">
+        <div class="screen-num">۹</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--gold),#b45309)">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <div class="topbar-title">انتخاب جایزه</div>
+            </div>
+            <div class="sbody">
+              <div style="text-align:center;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--wf-line)">
+                <div style="font-size:9px;color:var(--text2)">جمع فاکتور شما</div>
+                <div style="font-size:22px;font-weight:900;color:var(--gold)">۶۲M</div>
+                <div style="font-size:9px;color:var(--green)">سطح ۵۰–۷۵M فعال شد</div>
+              </div>
+              <div class="lbl">یک جایزه انتخاب کنید</div>
+              <div class="reward sel">
+                <div class="reward-ico" style="background:rgba(217,119,6,.1);color:var(--gold)"><svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v.5l2 5h16l2-5V9a2 2 0 00-2-2z"/><path d="M12 7V3M8 7V5M16 7V5"/></svg></div>
+                <div><div class="reward-t">جایزه الف</div><div class="reward-d">بسته کادویی ویژه برند</div></div>
+                <div class="reward-chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              </div>
+              <div class="reward">
+                <div class="reward-ico" style="background:rgba(37,99,235,.08);color:var(--blue)"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16h16V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+                <div><div class="reward-t">جایزه ب</div><div class="reward-d">تخفیف ۵٪ فاکتور بعدی</div></div>
+                <div class="reward-chk"></div>
+              </div>
+              <div class="reward">
+                <div class="reward-ico" style="background:rgba(5,150,105,.08);color:var(--green)"><svg viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><circle cx="7" cy="7" r="1" fill="currentColor" stroke="none"/></svg></div>
+                <div><div class="reward-t">جایزه ج</div><div class="reward-d">یک محصول رایگان</div></div>
+                <div class="reward-chk"></div>
+              </div>
+            </div>
+            <div class="total-bar" style="background:rgba(5,150,105,.05)">
+              <div><div class="tl">ثبت در</div><div style="font-size:11px;font-weight:800;color:var(--green)">راهکاران</div></div>
+              <div class="tact" style="background:linear-gradient(135deg,var(--green),#16a34a)">ثبت نهایی</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">انتخاب جایزه</div>
+      </div>
+
+      <div class="arr"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg><span>ربات ثبت می‌کند</span></div>
+
+      <!-- Screen 4C: ERP Progress -->
+      <div class="screen-col">
+        <div class="screen-num">۱۰</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="topbar" style="background:linear-gradient(135deg,var(--green),#16a34a)">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><line x1="8" y1="9" x2="16" y2="9"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
+              <div><div class="topbar-title">ثبت در راهکاران</div><div class="topbar-sub">ربات هوشمند</div></div>
+            </div>
+            <div class="sbody">
+              <div style="text-align:center;margin-bottom:16px">
+                <div style="width:52px;height:52px;border-radius:50%;background:rgba(5,150,105,.1);border:2px solid rgba(5,150,105,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 8px">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                </div>
+                <div style="font-size:12px;font-weight:700;color:var(--green)">در حال ثبت…</div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:0">
+                <div class="erp-step">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div><div class="erp-step-t">سند فروش ایجاد شد</div><div class="erp-step-s">شماره: FV-۱۴۰۳-۰۸۴۷</div></div>
+                </div>
+                <div class="erp-step">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div><div class="erp-step-t">اقلام مام ثبت شد</div><div class="erp-step-s">۳ ردیف · ۲۴M</div></div>
+                </div>
+                <div class="erp-step">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  <div><div class="erp-step-t">اقلام سان ثبت شد</div><div class="erp-step-s">۲ ردیف · ۱۸M</div></div>
+                </div>
+                <div class="erp-step" style="opacity:.4">
+                  <div style="width:13px;height:13px;border:1.5px solid var(--text3);border-radius:50%;flex-shrink:0;animation:spin 1s linear infinite"></div>
+                  <div><div class="erp-step-t">اقلام نوا…</div></div>
+                </div>
+                <div class="erp-step" style="opacity:.2">
+                  <div style="width:13px;height:13px;border:1.5px dashed var(--text3);border-radius:50%;flex-shrink:0"></div>
+                  <div><div class="erp-step-t" style="color:var(--text3)">جایزه الف…</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="total-bar" style="background:rgba(5,150,105,.04)">
+              <div style="font-size:9px;color:var(--text2)">در حال پردازش…</div>
+              <div style="font-size:10px;font-weight:700;color:var(--green)">۶۲M ثبت می‌شود</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen-name">ثبت ERP</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="background:rgba(5,150,105,.04);border:1px solid rgba(5,150,105,.15);border-radius:14px;padding:16px 20px;display:flex;align-items:center;gap:12px;max-width:640px">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M7 12l4 4 6-6"/></svg>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:3px">جریان کامل — ۱۰ صفحه</div>
+      <div style="font-size:11px;color:var(--text2)">ورود · GPS · اسکن AI · پیشنهاد هوشمند · ویرایش برند · خلاصه · جایزه · ثبت راهکاران</div>
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+</style>
+</body>
+</html>
