@@ -288,7 +288,7 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
     <div class="cvtag" style="border-color:rgba(5,150,105,.2);color:var(--green)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="12" width="4" height="9"/><rect x="10" y="7" width="4" height="14"/><rect x="17" y="4" width="4" height="17"/></svg>مانیتورینگ کلان</div>
   </div>
   <div class="anim" style="display:flex;gap:22px;font-size:11px;color:var(--text2)">
-    <span>پیش‌نویس توضیحی</span><span>تیم ۲ نفره</span><span>۱۰ تا ۱۳ هفته</span>
+    <span>پیش‌نویس توضیحی</span><span>تیم ۵ نفره</span><span>۱۰ تا ۱۳ هفته</span>
   </div>
 </div>
 
@@ -424,8 +424,13 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
   <div class="anim" style="width:100%;max-width:940px;background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)">
     <!-- Top bar -->
     <div style="background:linear-gradient(135deg,rgba(37,99,235,.07),rgba(8,145,178,.05));border-bottom:1px solid var(--border);padding:9px 16px;display:flex;align-items:center;justify-content:space-between">
-      <div style="font-size:10px;font-weight:700;color:var(--text)">پنل مدیریت سیلانه سبز</div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="font-size:10px;font-weight:700;color:var(--text)">پنل مدیریت سیلانه سبز</div>
+        <div style="padding:2px 7px;border-radius:12px;background:rgba(124,58,237,.08);border:1px solid rgba(124,58,237,.2);font-size:7px;font-weight:700;color:var(--purple)">v2.3</div>
+        <div style="font-size:7px;color:var(--text3)">بروزرسانی: ۱۴۰۳/۰۳/۱۵</div>
+      </div>
       <div style="display:flex;gap:8px">
+        <div style="padding:3px 9px;border-radius:5px;border:1px solid rgba(124,58,237,.25);font-size:7.5px;color:var(--purple);display:flex;align-items:center;gap:4px"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12"/></svg>تاریخچه نسخ</div>
         <div style="padding:3px 9px;border-radius:5px;background:linear-gradient(135deg,var(--blue),var(--teal));font-size:7.5px;font-weight:700;color:#fff">+ افزودن قانون</div>
         <div style="padding:3px 9px;border-radius:5px;border:1px solid var(--border);font-size:7.5px;color:var(--text2)">ذخیره تغییرات</div>
       </div>
@@ -458,35 +463,48 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
           <!-- Col 1: محصولات تأکیدی -->
           <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 10px">
-            <div style="font-size:7.5px;font-weight:700;color:var(--purple);margin-bottom:6px;display:flex;justify-content:space-between"><span>محصولات تأکیدی</span><span style="color:var(--blue);font-weight:700;cursor:pointer">+ افزودن</span></div>
+            <div style="font-size:7.5px;font-weight:700;color:var(--purple);margin-bottom:6px;display:flex;justify-content:space-between;align-items:center"><span>محصولات تأکیدی</span><span style="color:var(--blue);font-weight:700;cursor:pointer">+ افزودن</span></div>
             <div style="display:flex;flex-direction:column;gap:3px">
-              <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,0,0,.04)"><div style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">مام ۲۵۰ml</div><div style="font-size:7px;color:var(--purple);font-weight:700">رشد ۱۵٪</div></div>
-              <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,0,0,.04)"><div style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">سان ۵۰۰ml</div><div style="font-size:7px;color:var(--purple);font-weight:700">رشد ۱۲٪</div></div>
-              <div style="display:flex;align-items:center;gap:5px;padding:3px 0"><div style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">دلتا کرم</div><div style="font-size:7px;color:var(--purple);font-weight:700">رشد ۱۸٪</div></div>
+              <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,0,0,.04)"><div style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">مام ۲۵۰ml</div><div style="font-size:7px;color:var(--purple);font-weight:700">رشد ۱۵٪</div><div style="font-size:6px;padding:1px 4px;border-radius:3px;background:rgba(124,58,237,.1);color:var(--purple);margin-right:2px">v2.3</div></div>
+              <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,0,0,.04)"><div style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">سان ۵۰۰ml</div><div style="font-size:7px;color:var(--purple);font-weight:700">رشد ۱۲٪</div><div style="font-size:6px;padding:1px 4px;border-radius:3px;background:rgba(124,58,237,.1);color:var(--purple);margin-right:2px">v2.1</div></div>
+              <div style="display:flex;align-items:center;gap:5px;padding:3px 0"><div style="width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">دلتا کرم</div><div style="font-size:7px;color:var(--purple);font-weight:700">رشد ۱۸٪</div><div style="font-size:6px;padding:1px 4px;border-radius:3px;background:rgba(124,58,237,.1);color:var(--purple);margin-right:2px">v2.3</div></div>
             </div>
           </div>
           <!-- Col 2: Must-Have -->
           <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 10px">
             <div style="font-size:7.5px;font-weight:700;color:var(--red);margin-bottom:6px">محصولات Must-Have</div>
             <div style="display:flex;flex-direction:column;gap:3px">
-              <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,0,0,.04)"><div style="width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">نوا ۱۰۰ml</div><div style="font-size:7px;color:var(--text2)">حداقل ۸</div></div>
-              <div style="display:flex;align-items:center;gap:5px;padding:3px 0"><div style="width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">مام اسپری</div><div style="font-size:7px;color:var(--text2)">حداقل ۵</div></div>
+              <div style="display:flex;align-items:center;gap:5px;padding:3px 0;border-bottom:1px solid rgba(0,0,0,.04)"><div style="width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">نوا ۱۰۰ml</div><div style="font-size:7px;color:var(--text2)">حداقل ۸</div><div style="font-size:6px;padding:1px 4px;border-radius:3px;background:rgba(220,38,38,.1);color:var(--red);margin-right:2px">v2.2</div></div>
+              <div style="display:flex;align-items:center;gap:5px;padding:3px 0"><div style="width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0"></div><div style="flex:1;font-size:7.5px;color:var(--text)">مام اسپری</div><div style="font-size:7px;color:var(--text2)">حداقل ۵</div><div style="font-size:6px;padding:1px 4px;border-radius:3px;background:rgba(220,38,38,.1);color:var(--red);margin-right:2px">v2.3</div></div>
             </div>
             <div style="margin-top:7px;font-size:7.5px;font-weight:700;color:var(--gold)">قوانین رشد عمومی</div>
             <div style="margin-top:4px;display:flex;align-items:center;justify-content:space-between;padding:3px 6px;background:rgba(217,119,6,.06);border-radius:4px">
               <div style="font-size:7px;color:var(--text2)">رشد پایه</div>
-              <div style="font-size:8px;font-weight:700;color:var(--gold)">۱۰٪</div>
+              <div style="display:flex;align-items:center;gap:4px"><div style="font-size:8px;font-weight:700;color:var(--gold)">۱۰٪</div><div style="font-size:6px;padding:1px 4px;border-radius:3px;background:rgba(217,119,6,.12);color:var(--gold)">v2.3</div></div>
             </div>
           </div>
-          <!-- Col 3: جوایز + پروموشن -->
-          <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 10px">
-            <div style="font-size:7.5px;font-weight:700;color:var(--gold);margin-bottom:6px">جوایز فعال</div>
+          <!-- Col 3: نسخه‌بندی -->
+          <div style="background:var(--bg);border:1px solid rgba(124,58,237,.15);border-radius:8px;padding:9px 10px">
+            <div style="font-size:7.5px;font-weight:700;color:var(--purple);margin-bottom:6px;display:flex;align-items:center;gap:5px"><svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3"/></svg>تاریخچه نسخ</div>
             <div style="display:flex;flex-direction:column;gap:3px">
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:3px 5px;background:rgba(100,116,139,.06);border-radius:4px"><div style="font-size:7px;color:var(--text2)">پایه ۲۵–۵۰M</div><div style="font-size:7px;color:var(--text3)">۲ گزینه</div><div style="width:5px;height:5px;border-radius:50%;background:var(--green)"></div></div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:3px 5px;background:rgba(217,119,6,.06);border-radius:4px"><div style="font-size:7px;color:var(--gold)">طلایی ۵۰–۷۵M</div><div style="font-size:7px;color:var(--text3)">۳ گزینه</div><div style="width:5px;height:5px;border-radius:50%;background:var(--green)"></div></div>
-              <div style="display:flex;align-items:center;justify-content:space-between;padding:3px 5px;background:rgba(5,150,105,.06);border-radius:4px"><div style="font-size:7px;color:var(--green)">ممتاز ۷۵M+</div><div style="font-size:7px;color:var(--text3)">۳ گزینه</div><div style="width:5px;height:5px;border-radius:50%;background:var(--green)"></div></div>
+              <div style="display:flex;align-items:flex-start;gap:5px;padding:3.5px 6px;background:rgba(124,58,237,.05);border-radius:4px;border-right:2px solid var(--purple)">
+                <div style="font-size:6.5px;font-weight:700;color:var(--purple);min-width:22px">v2.3</div>
+                <div style="flex:1"><div style="font-size:6.5px;color:var(--text)">مام تأکیدی → رشد ۱۵٪</div><div style="font-size:6px;color:var(--text3)">۱۴۰۳/۰۳/۱۵</div></div>
+                <div style="font-size:6px;padding:1px 4px;background:var(--green);color:#fff;border-radius:3px">فعال</div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:5px;padding:3.5px 6px;background:rgba(15,23,42,.02);border-radius:4px">
+                <div style="font-size:6.5px;font-weight:700;color:var(--text2);min-width:22px">v2.2</div>
+                <div style="flex:1"><div style="font-size:6.5px;color:var(--text2)">نوا must-have: حداقل ۶→۸</div><div style="font-size:6px;color:var(--text3)">۱۴۰۳/۰۲/۱۰</div></div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:5px;padding:3.5px 6px;background:rgba(15,23,42,.02);border-radius:4px">
+                <div style="font-size:6.5px;font-weight:700;color:var(--text3);min-width:22px">v2.1</div>
+                <div style="flex:1"><div style="font-size:6.5px;color:var(--text3)">سان اضافه به تأکیدی</div><div style="font-size:6px;color:var(--text3)">۱۴۰۳/۰۱/۲۰</div></div>
+              </div>
             </div>
-            <div style="margin-top:6px;padding:3px 6px;background:rgba(8,145,178,.06);border-radius:4px;font-size:7px;color:var(--teal)">پروموشن ویژه: مام — فعال تا پایان ماه</div>
+            <div style="margin-top:6px;padding:3px 6px;background:rgba(37,99,235,.05);border-radius:4px;display:flex;align-items:center;justify-content:space-between">
+              <div style="font-size:6.5px;color:var(--text2)">بازگشت به نسخه قبلی</div>
+              <div style="font-size:6.5px;color:var(--blue);font-weight:700">↩ Rollback</div>
+            </div>
           </div>
         </div>
       </div>
@@ -788,151 +806,209 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
       <div><div class="ct">پشتیبانی در ریتینر ماهانه</div><div class="cb">اصلاحات ناشی از آپدیت راهکاران در قرارداد ماهانه پوشش دارد</div></div>
     </div>
   </div>
+  <!-- Bot complexity section -->
+  <div class="anim" style="width:100%;max-width:800px;margin-top:10px;background:rgba(15,23,42,.025);border:1px solid var(--border);border-radius:12px;padding:12px 16px">
+    <div style="font-size:8.5px;font-weight:700;color:var(--text2);letter-spacing:1px;margin-bottom:9px;display:flex;align-items:center;gap:6px">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
+      پیچیدگی‌های فنی ربات
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+      <div style="background:var(--card);border:1px solid rgba(220,38,38,.15);border-radius:8px;padding:9px 11px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+          <div style="width:22px;height:22px;border-radius:6px;background:rgba(220,38,38,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+          <div style="font-size:8.5px;font-weight:700;color:var(--red)">ورود داده به راهکاران</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--red);flex-shrink:0">·</span>DOM سلکتورهای شکننده</div>
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--red);flex-shrink:0">·</span>تغییر UI با هر آپدیت</div>
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--red);flex-shrink:0">·</span>تایم‌اوت و session انقضا</div>
+        </div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(37,99,235,.15);border-radius:8px;padding:9px 11px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+          <div style="width:22px;height:22px;border-radius:6px;background:rgba(37,99,235,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+          <div style="font-size:8.5px;font-weight:700;color:var(--blue)">مقیاس‌پذیری</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--blue);flex-shrink:0">·</span>صف پردازش موازی چند فروشگاه</div>
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--blue);flex-shrink:0">·</span>محدودیت rate راهکاران</div>
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--blue);flex-shrink:0">·</span>مدیریت سشن‌های همزمان</div>
+        </div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(5,150,105,.15);border-radius:8px;padding:9px 11px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+          <div style="width:22px;height:22px;border-radius:6px;background:rgba(5,150,105,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <div style="font-size:8.5px;font-weight:700;color:var(--green)">مدیریت خطاها</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--green);flex-shrink:0">·</span>retry با backoff تصاعدی</div>
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--green);flex-shrink:0">·</span>اطلاع‌رسانی شکست جزئی</div>
+          <div style="font-size:7.5px;color:var(--text2);display:flex;align-items:flex-start;gap:4px"><span style="color:var(--green);flex-shrink:0">·</span>دسته‌بندی نوع خطا و لاگ</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 
 <!-- ⑩ وایرفریم مانیتورینگ -->
-<div class="slide" id="s-monitor" data-title="وایرفریم مانیتورینگ و گزارش‌ها">
-  <div class="tag anim anim-down" style="margin-bottom:10px">MONITORING</div>
-  <div class="h1 anim anim-down" style="margin-bottom:5px">وایرفریم <span class="t">مانیتورینگ و گزارش‌ها</span></div>
-  <div class="sub anim anim-down" style="margin-bottom:12px">۴ حوزه کلیدی که نشان می‌دهد پروژه خوب پیش می‌رود</div>
-  <div class="anim" style="width:100%;max-width:940px;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)">
-    <!-- Top bar -->
-    <div style="background:linear-gradient(135deg,var(--blue),var(--teal));padding:10px 18px;display:flex;align-items:center;justify-content:space-between">
-      <div style="font-size:10.5px;font-weight:700;color:#fff">داشبورد مانیتورینگ کلان — افق ۳۶۰</div>
-      <div style="display:flex;gap:10px;font-size:8px;color:rgba(255,255,255,.75)">
-        <span>هفته جاری</span><span style="color:#fff;font-weight:600;border-bottom:1.5px solid #fff">این ماه</span><span>سه ماه</span>
+<div class="slide" id="s-monitor" data-title="مانیتورینگ و گزارش‌ها">
+  <div class="tag anim anim-down" style="margin-bottom:10px">MONITORING DASHBOARD</div>
+  <div class="h1 anim anim-down" style="margin-bottom:5px">مانیتورینگ <span class="t">اجرا در سطح کلان</span></div>
+  <div class="sub anim anim-down" style="margin-bottom:10px">عملکرد فروشندگان · رشد محصولات · شلف‌پوشی · خلاصه اجرا</div>
+  <div class="anim" style="width:100%;max-width:940px">
+    <!-- Summary KPI bar -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px">
+      <div style="background:var(--card);border:1px solid rgba(5,150,105,.22);border-radius:10px;padding:8px 12px;text-align:center;box-shadow:var(--shadow)">
+        <div style="font-size:20px;font-weight:900;color:var(--green)">۸۷٪</div>
+        <div style="font-size:7.5px;color:var(--text2);margin-top:2px">نرخ نهایی‌سازی پیشنهاد</div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(37,99,235,.2);border-radius:10px;padding:8px 12px;text-align:center;box-shadow:var(--shadow)">
+        <div style="font-size:20px;font-weight:900;color:var(--blue)">+۱۴٪</div>
+        <div style="font-size:7.5px;color:var(--text2);margin-top:2px">رشد درآمد vs baseline</div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(217,119,6,.2);border-radius:10px;padding:8px 12px;text-align:center;box-shadow:var(--shadow)">
+        <div style="font-size:20px;font-weight:900;color:var(--gold)">۱۱٪</div>
+        <div style="font-size:7.5px;color:var(--text2);margin-top:2px">انحراف از پیشنهاد AI</div>
+      </div>
+      <div style="background:var(--card);border:1px solid rgba(8,145,178,.2);border-radius:10px;padding:8px 12px;text-align:center;box-shadow:var(--shadow)">
+        <div style="font-size:20px;font-weight:900;color:var(--teal)">۲۳۱</div>
+        <div style="font-size:7.5px;color:var(--text2);margin-top:2px">فروشگاه فعال این ماه</div>
       </div>
     </div>
-    <!-- 4-panel grid -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;direction:rtl">
-
-      <!-- Panel 1: استفاده واقعی -->
-      <div style="padding:14px 16px;border-left:1px solid var(--border);border-bottom:1px solid var(--border)">
-        <div style="font-size:8px;font-weight:700;color:var(--teal);letter-spacing:.8px;margin-bottom:9px;display:flex;align-items:center;gap:5px">
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18" stroke-width="3"/></svg>
-          استفاده واقعی
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px">
-          <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.18);border-radius:7px;padding:7px 6px;text-align:center">
-            <div style="font-size:16px;font-weight:900;color:var(--green)">۲۳</div>
-            <div style="font-size:7px;color:var(--text3);margin-top:1px">فاکتور امروز</div>
-          </div>
-          <div style="background:rgba(8,145,178,.06);border:1px solid rgba(8,145,178,.18);border-radius:7px;padding:7px 6px;text-align:center">
-            <div style="font-size:16px;font-weight:900;color:var(--teal)">۱۱۸</div>
-            <div style="font-size:7px;color:var(--text3);margin-top:1px">فروشنده فعال</div>
-          </div>
-          <div style="background:rgba(37,99,235,.06);border:1px solid rgba(37,99,235,.18);border-radius:7px;padding:7px 6px;text-align:center">
-            <div style="font-size:16px;font-weight:900;color:var(--blue)">۴.۲</div>
-            <div style="font-size:7px;color:var(--text3);margin-top:1px">دقیقه / ویزیت</div>
-          </div>
-        </div>
-        <div style="font-size:7.5px;color:var(--text3);margin-bottom:4px">روند هفتگی فاکتورها</div>
-        <div style="display:flex;align-items:flex-end;gap:3px;height:24px">
-          <div style="flex:1;background:var(--teal);border-radius:2px 2px 0 0;height:45%"></div>
-          <div style="flex:1;background:var(--teal);border-radius:2px 2px 0 0;height:60%"></div>
-          <div style="flex:1;background:var(--teal);border-radius:2px 2px 0 0;height:55%"></div>
-          <div style="flex:1;background:var(--teal);border-radius:2px 2px 0 0;height:75%"></div>
-          <div style="flex:1;background:var(--teal);border-radius:2px 2px 0 0;height:70%"></div>
-          <div style="flex:1;background:var(--teal);border-radius:2px 2px 0 0;height:85%"></div>
-          <div style="flex:1;background:var(--green);border-radius:2px 2px 0 0;height:100%"></div>
+    <!-- Main dashboard card -->
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)">
+      <!-- Top bar -->
+      <div style="background:linear-gradient(135deg,rgba(37,99,235,.07),rgba(8,145,178,.05));border-bottom:1px solid var(--border);padding:9px 16px;display:flex;align-items:center;justify-content:space-between">
+        <div style="font-size:10px;font-weight:700;color:var(--text)">داشبورد مانیتورینگ کلان — افق ۳۶۰</div>
+        <div style="display:flex;gap:6px;font-size:8px">
+          <span style="padding:2px 8px;border-radius:4px;border:1px solid var(--border);color:var(--text2)">هفته</span>
+          <span style="padding:2px 8px;border-radius:4px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.2);color:var(--blue);font-weight:700">این ماه</span>
+          <span style="padding:2px 8px;border-radius:4px;border:1px solid var(--border);color:var(--text2)">سه ماه</span>
         </div>
       </div>
+      <!-- 4-panel grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;direction:rtl">
 
-      <!-- Panel 2: تأثیر پیشنهاد AI -->
-      <div style="padding:14px 16px;border-bottom:1px solid var(--border)">
-        <div style="font-size:8px;font-weight:700;color:var(--purple);letter-spacing:.8px;margin-bottom:9px;display:flex;align-items:center;gap:5px">
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a9 9 0 019 9c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9z"/><path d="M9 12l2 2 4-4"/></svg>
-          تأثیر پیشنهاد هوشمند
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px">
-          <div style="background:rgba(124,58,237,.06);border:1px solid rgba(124,58,237,.18);border-radius:7px;padding:7px 8px;text-align:center">
-            <div style="font-size:18px;font-weight:900;color:var(--purple)">۹۴٪</div>
-            <div style="font-size:7px;color:var(--text3);margin-top:1px">نرخ پذیرش AI</div>
+        <!-- Panel 1: عملکرد فروشندگان -->
+        <div style="padding:12px 14px;border-left:1px solid var(--border);border-bottom:1px solid var(--border)">
+          <div style="font-size:8px;font-weight:700;color:var(--blue);letter-spacing:.8px;margin-bottom:8px;display:flex;align-items:center;gap:5px">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            عملکرد فروشندگان — نهایی‌سازی پیشنهاد
           </div>
-          <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.18);border-radius:7px;padding:7px 8px;text-align:center">
-            <div style="font-size:18px;font-weight:900;color:var(--green)">+۱۲٪</div>
-            <div style="font-size:7px;color:var(--text3);margin-top:1px">رشد واقعی</div>
+          <div style="display:grid;grid-template-columns:1fr 36px 36px 40px;gap:4px;padding:3px 6px;background:rgba(15,23,42,.03);border-radius:4px;margin-bottom:4px">
+            <div style="font-size:6.5px;color:var(--text3)">نام فروشنده</div>
+            <div style="font-size:6.5px;color:var(--text3);text-align:center">پیشنهاد</div>
+            <div style="font-size:6.5px;color:var(--text3);text-align:center">نهایی</div>
+            <div style="font-size:6.5px;color:var(--text3);text-align:center">نرخ</div>
           </div>
-        </div>
-        <div style="font-size:7.5px;color:var(--text3);margin-bottom:5px">رشد فروشگاه‌به‌فروشگاه</div>
-        <div style="display:flex;flex-direction:column;gap:3px">
-          <div style="display:flex;align-items:center;gap:4px"><div style="font-size:7px;color:var(--text3);min-width:46px">شیراز ۴۷</div><div style="flex:1;height:7px;background:rgba(5,150,105,.1);border-radius:2px;overflow:hidden"><div style="height:100%;width:78%;background:var(--green);border-radius:2px"></div></div><div style="font-size:7px;color:var(--green);font-weight:700;min-width:22px">+۱۸٪</div></div>
-          <div style="display:flex;align-items:center;gap:4px"><div style="font-size:7px;color:var(--text3);min-width:46px">تهران ۱۲</div><div style="flex:1;height:7px;background:rgba(8,145,178,.1);border-radius:2px;overflow:hidden"><div style="height:100%;width:62%;background:var(--teal);border-radius:2px"></div></div><div style="font-size:7px;color:var(--teal);font-weight:700;min-width:22px">+۱۴٪</div></div>
-          <div style="display:flex;align-items:center;gap:4px"><div style="font-size:7px;color:var(--text3);min-width:46px">مشهد ۸</div><div style="flex:1;height:7px;background:rgba(220,38,38,.1);border-radius:2px;overflow:hidden"><div style="height:100%;width:22%;background:var(--red);border-radius:2px"></div></div><div style="font-size:7px;color:var(--red);font-weight:700;min-width:22px">−۳٪</div></div>
-        </div>
-      </div>
-
-      <!-- Panel 3: سلامت ربات -->
-      <div style="padding:14px 16px;border-left:1px solid var(--border)">
-        <div style="font-size:8px;font-weight:700;color:var(--green);letter-spacing:.8px;margin-bottom:9px;display:flex;align-items:center;gap:5px">
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          سلامت فنی ربات
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:9px">
-          <div style="background:rgba(5,150,105,.06);border:1px solid rgba(5,150,105,.2);border-radius:7px;padding:7px 8px;text-align:center">
-            <div style="font-size:18px;font-weight:900;color:var(--green)">۹۸.۳٪</div>
-            <div style="font-size:7px;color:var(--text3);margin-top:1px">موفقیت ثبت</div>
-          </div>
-          <div style="background:rgba(220,38,38,.05);border:1px solid rgba(220,38,38,.15);border-radius:7px;padding:7px 8px;text-align:center">
-            <div style="font-size:18px;font-weight:900;color:var(--red)">۳</div>
-            <div style="font-size:7px;color:var(--text3);margin-top:1px">خطا امروز</div>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:4px">
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 8px;background:rgba(5,150,105,.04);border-radius:5px;border:1px solid rgba(5,150,105,.14)">
-            <div style="font-size:7.5px;color:var(--text)">آخرین ثبت موفق</div>
-            <div style="font-size:7.5px;font-weight:700;color:var(--green)">۱۴ دقیقه پیش</div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 8px;background:var(--bg);border-radius:5px;border:1px solid var(--border)">
-            <div style="font-size:7.5px;color:var(--text)">میانگین زمان ثبت</div>
-            <div style="font-size:7.5px;font-weight:700;color:var(--teal)">۱۸ ثانیه</div>
-          </div>
-          <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 8px;background:rgba(220,38,38,.04);border-radius:5px;border:1px solid rgba(220,38,38,.12)">
-            <div style="font-size:7.5px;color:var(--text)">آخرین خطا</div>
-            <div style="font-size:7.5px;font-weight:700;color:var(--red)">timeout راهکاران</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Panel 4: پیشرفت پیاده‌سازی -->
-      <div style="padding:14px 16px">
-        <div style="font-size:8px;font-weight:700;color:var(--gold);letter-spacing:.8px;margin-bottom:9px;display:flex;align-items:center;gap:5px">
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-          پیشرفت پیاده‌سازی
-        </div>
-        <div style="display:flex;flex-direction:column;gap:5px">
-          <div style="display:flex;align-items:center;gap:7px">
-            <div style="width:12px;height:12px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <div style="flex:1;font-size:8.5px;color:var(--text)">فاز ۱: تحلیل و طراحی</div>
-            <div style="font-size:7.5px;color:var(--green);font-weight:700">تکمیل</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:7px">
-            <div style="width:12px;height:12px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0"><div style="width:5px;height:5px;border-radius:50%;background:#fff"></div></div>
-            <div style="flex:1">
-              <div style="font-size:8.5px;color:var(--text);margin-bottom:2px">فاز ۲: هسته هوشمند</div>
-              <div style="height:5px;background:rgba(37,99,235,.12);border-radius:3px;overflow:hidden"><div style="height:100%;width:68%;background:var(--blue);border-radius:3px"></div></div>
+          <div style="display:flex;flex-direction:column;gap:2.5px">
+            <div style="display:grid;grid-template-columns:1fr 36px 36px 40px;gap:4px;align-items:center;padding:3.5px 6px;border-radius:5px;background:rgba(5,150,105,.04);border:1px solid rgba(5,150,105,.14)">
+              <div style="font-size:7.5px;color:var(--text);font-weight:600">رضا احمدی</div>
+              <div style="font-size:7.5px;color:var(--text2);text-align:center">۴۸</div>
+              <div style="font-size:7.5px;color:var(--text2);text-align:center">۴۴</div>
+              <div style="font-size:7.5px;color:var(--green);font-weight:700;text-align:center">۹۲٪</div>
             </div>
-            <div style="font-size:7.5px;color:var(--blue);font-weight:700">۶۸٪</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:7px">
-            <div style="width:12px;height:12px;border-radius:50%;border:1.5px solid var(--text3);flex-shrink:0"></div>
-            <div style="flex:1;font-size:8.5px;color:var(--text2)">فاز ۳: ربات هوشمند</div>
-            <div style="font-size:7.5px;color:var(--text3)">در انتظار</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:7px">
-            <div style="width:12px;height:12px;border-radius:50%;border:1.5px solid var(--text3);flex-shrink:0"></div>
-            <div style="flex:1;font-size:8.5px;color:var(--text2)">فاز ۴: آزمون پذیرش UAT</div>
-            <div style="font-size:7.5px;color:var(--text3)">در انتظار</div>
+            <div style="display:grid;grid-template-columns:1fr 36px 36px 40px;gap:4px;align-items:center;padding:3.5px 6px;border-radius:5px;background:rgba(37,99,235,.03)">
+              <div style="font-size:7.5px;color:var(--text)">سارا کریمی</div>
+              <div style="font-size:7.5px;color:var(--text2);text-align:center">۳۵</div>
+              <div style="font-size:7.5px;color:var(--text2);text-align:center">۳۰</div>
+              <div style="font-size:7.5px;color:var(--teal);font-weight:700;text-align:center">۸۶٪</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 36px 36px 40px;gap:4px;align-items:center;padding:3.5px 6px;border-radius:5px;background:rgba(37,99,235,.03)">
+              <div style="font-size:7.5px;color:var(--text)">محمد نوری</div>
+              <div style="font-size:7.5px;color:var(--text2);text-align:center">۴۲</div>
+              <div style="font-size:7.5px;color:var(--text2);text-align:center">۳۵</div>
+              <div style="font-size:7.5px;color:var(--teal);font-weight:700;text-align:center">۸۳٪</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 36px 36px 40px;gap:4px;align-items:center;padding:3.5px 6px;border-radius:5px;background:rgba(220,38,38,.03);border:1px solid rgba(220,38,38,.1)">
+              <div style="font-size:7.5px;color:var(--text)">علی صادقی</div>
+              <div style="font-size:7.5px;color:var(--text2);text-align:center">۲۹</div>
+              <div style="font-size:7.5px;color:var(--text2);text-align:center">۱۹</div>
+              <div style="font-size:7.5px;color:var(--red);font-weight:700;text-align:center">۶۵٪</div>
+            </div>
           </div>
         </div>
-        <div style="margin-top:10px;padding:5px 9px;background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-radius:6px;display:flex;align-items:center;justify-content:space-between">
-          <div style="font-size:7.5px;color:var(--gold)">پیشرفت کلی پروژه</div>
-          <div style="font-size:10px;font-weight:900;color:var(--gold)">۴۲٪</div>
-        </div>
-      </div>
 
+        <!-- Panel 2: رشد محصولات -->
+        <div style="padding:12px 14px;border-bottom:1px solid var(--border)">
+          <div style="font-size:8px;font-weight:700;color:var(--green);letter-spacing:.8px;margin-bottom:8px;display:flex;align-items:center;gap:5px">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+            رشد فروش محصولات — ماه جاری vs قبل
+          </div>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <div style="display:flex;align-items:center;gap:6px"><div style="font-size:7.5px;color:var(--text);min-width:52px">مام ۲۵۰ml</div><div style="flex:1;height:8px;background:rgba(5,150,105,.1);border-radius:3px;overflow:hidden"><div style="height:100%;width:82%;background:var(--green);border-radius:3px"></div></div><div style="font-size:7.5px;font-weight:700;color:var(--green);min-width:28px">+۲۳٪</div></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="font-size:7.5px;color:var(--text);min-width:52px">سان ۵۰۰ml</div><div style="flex:1;height:8px;background:rgba(8,145,178,.1);border-radius:3px;overflow:hidden"><div style="height:100%;width:68%;background:var(--teal);border-radius:3px"></div></div><div style="font-size:7.5px;font-weight:700;color:var(--teal);min-width:28px">+۱۸٪</div></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="font-size:7.5px;color:var(--text);min-width:52px">دلتا کرم</div><div style="flex:1;height:8px;background:rgba(124,58,237,.1);border-radius:3px;overflow:hidden"><div style="height:100%;width:55%;background:var(--purple);border-radius:3px"></div></div><div style="font-size:7.5px;font-weight:700;color:var(--purple);min-width:28px">+۱۵٪</div></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="font-size:7.5px;color:var(--text);min-width:52px">نوا ۱۰۰ml</div><div style="flex:1;height:8px;background:rgba(37,99,235,.1);border-radius:3px;overflow:hidden"><div style="height:100%;width:42%;background:var(--blue);border-radius:3px"></div></div><div style="font-size:7.5px;font-weight:700;color:var(--blue);min-width:28px">+۱۱٪</div></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="font-size:7.5px;color:var(--text);min-width:52px">مام اسپری</div><div style="flex:1;height:8px;background:rgba(217,119,6,.1);border-radius:3px;overflow:hidden"><div style="height:100%;width:28%;background:var(--gold);border-radius:3px"></div></div><div style="font-size:7.5px;font-weight:700;color:var(--gold);min-width:28px">+۷٪</div></div>
+            <div style="display:flex;align-items:center;gap:6px"><div style="font-size:7.5px;color:var(--text);min-width:52px">نوا شامپو</div><div style="flex:1;height:8px;background:rgba(220,38,38,.1);border-radius:3px;overflow:hidden"><div style="height:100%;width:14%;background:var(--red);border-radius:3px"></div></div><div style="font-size:7.5px;font-weight:700;color:var(--red);min-width:28px">−۴٪</div></div>
+          </div>
+        </div>
+
+        <!-- Panel 3: بیشترین نبود در شلف -->
+        <div style="padding:12px 14px;border-left:1px solid var(--border)">
+          <div style="font-size:8px;font-weight:700;color:var(--gold);letter-spacing:.8px;margin-bottom:7px;display:flex;align-items:center;gap:5px">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            بیشترین نبود در شلف — فرصت پیشنهاد
+          </div>
+          <div style="font-size:7px;color:var(--text3);margin-bottom:5px">محصولاتی که بیشترین بار در شلف نبودند — بیشترین پیشنهاد می‌گیرند</div>
+          <div style="display:flex;flex-direction:column;gap:3.5px">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 8px;background:rgba(217,119,6,.06);border-radius:5px;border-right:3px solid var(--gold)">
+              <div style="font-size:7.5px;font-weight:700;color:var(--text)">دلتا کرم ۱۵۰ml</div>
+              <div style="font-size:7px;color:var(--text2)">۱۳۴ فروشگاه</div>
+              <div style="font-size:7.5px;font-weight:700;color:var(--gold)">↑ اول</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 8px;background:rgba(124,58,237,.05);border-radius:5px;border-right:3px solid var(--purple)">
+              <div style="font-size:7.5px;font-weight:700;color:var(--text)">مام اسپری ۲۰۰ml</div>
+              <div style="font-size:7px;color:var(--text2)">۱۱۸ فروشگاه</div>
+              <div style="font-size:7.5px;font-weight:700;color:var(--purple)">تأکیدی</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 8px;background:rgba(8,145,178,.05);border-radius:5px;border-right:3px solid var(--teal)">
+              <div style="font-size:7.5px;font-weight:700;color:var(--text)">سان ۲۵۰ml</div>
+              <div style="font-size:7px;color:var(--text2)">۹۷ فروشگاه</div>
+              <div style="font-size:7.5px;font-weight:700;color:var(--teal)">رشد ۱۸٪</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:4px 8px;background:rgba(37,99,235,.04);border-radius:5px;border-right:3px solid var(--blue)">
+              <div style="font-size:7.5px;font-weight:700;color:var(--text)">نوا ژل ۸۵g</div>
+              <div style="font-size:7px;color:var(--text2)">۸۲ فروشگاه</div>
+              <div style="font-size:7.5px;font-weight:700;color:var(--blue)">جدید</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 4: خلاصه اجرای کلان -->
+        <div style="padding:12px 14px">
+          <div style="font-size:8px;font-weight:700;color:var(--teal);letter-spacing:.8px;margin-bottom:8px;display:flex;align-items:center;gap:5px">
+            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            خلاصه اجرای کلان
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:rgba(5,150,105,.05);border-radius:5px;border:1px solid rgba(5,150,105,.14)">
+              <div style="font-size:7.5px;color:var(--text)">نرخ پذیرش پیشنهاد AI</div>
+              <div style="display:flex;align-items:center;gap:4px"><div style="height:4px;width:40px;background:rgba(5,150,105,.15);border-radius:2px;overflow:hidden"><div style="height:100%;width:87%;background:var(--green);border-radius:2px"></div></div><div style="font-size:8px;font-weight:900;color:var(--green)">۸۷٪</div></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:rgba(37,99,235,.04);border-radius:5px;border:1px solid rgba(37,99,235,.12)">
+              <div style="font-size:7.5px;color:var(--text)">رشد درآمد vs baseline</div>
+              <div style="font-size:8px;font-weight:900;color:var(--blue)">+۱۴٪</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:rgba(217,119,6,.04);border-radius:5px;border:1px solid rgba(217,119,6,.12)">
+              <div style="font-size:7.5px;color:var(--text)">میانگین انحراف از AI</div>
+              <div style="font-size:8px;font-weight:900;color:var(--gold)">−۱۱٪</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:var(--bg);border-radius:5px;border:1px solid var(--border)">
+              <div style="font-size:7.5px;color:var(--text)">بهترین منطقه این ماه</div>
+              <div style="font-size:7.5px;font-weight:700;color:var(--teal)">شیراز ← +۲۳٪</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:5px 8px;background:rgba(220,38,38,.04);border-radius:5px;border:1px solid rgba(220,38,38,.1)">
+              <div style="font-size:7.5px;color:var(--text)">منطقه نیازمند بررسی</div>
+              <div style="font-size:7.5px;font-weight:700;color:var(--red)">مشهد ← −۳٪</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
@@ -1133,7 +1209,7 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
     </div>
   </div>
   <div class="anim" style="display:flex;gap:22px;font-size:11px;color:var(--text2)">
-    <span>پیش‌نویس توضیحی</span><span>تیم ۲ نفره</span><span>آماده همراهی میدانی</span>
+    <span>پیش‌نویس توضیحی</span><span>تیم ۵ نفره</span><span>آماده همراهی میدانی</span>
   </div>
 </div>
 
@@ -1188,7 +1264,7 @@ body{font-family:'Vazirmatn',system-ui,sans-serif;background:var(--bg);color:var
 
 <script>
 const SLIDES = [
-  { title:'صفحه اصلی', context:'پروژه پیشنهاد رد نشدنی. مجری: فناوران فرایند فردا. کارفرما: سیلانه سبز. فیچر: پیش‌فاکتور هوشمند، جوایز پلکانی، یکپارچه‌سازی با راهکاران، مانیتورینگ کلان. تیم ۲ نفره، ۱۰-۱۳ هفته، ۸۷۰ میلیون تومان.' },
+  { title:'صفحه اصلی', context:'پروژه پیشنهاد رد نشدنی. مجری: فناوران فرایند فردا. کارفرما: سیلانه سبز. فیچر: پیش‌فاکتور هوشمند، جوایز پلکانی، یکپارچه‌سازی با راهکاران، مانیتورینگ کلان. تیم ۵ نفره، ۱۰-۱۳ هفته، ۸۷۰ میلیون تومان.' },
   { title:'منظور از پیشنهاد رد نشدنی', context:'پیشنهاد رد نشدنی یعنی پیشنهادی که بر اساس تاریخچه واقعی فروش همان فروشگاه ساخته می‌شود، به نفع مشتری است (مقدار واقعی‌بین)، و با جایزه پلکانی همراه است. نه حدس، نه فشار — داده واقعی + هوش مصنوعی + جایزه.' },
   { title:'معماری سیستم', context:'ورودی‌ها: فروشنده (GPS، دوربین)، سیلانه سبز (قوانین رشد، جوایز). هسته: افق ۳۶۰ با AI، تاریخچه فروش، موتور قوانین. خروجی‌ها: پیشنهاد رد نشدنی، ثبت ERP (ربات)، مانیتورینگ کلان.' },
   { title:'داشبورد مدیریت', context:'داشبورد مدیریتی سیلانه برای کنترل: محصولات تأکیدی، قوانین رشد، پروموشن‌ها، جوایز. گروه‌های مشتری: خرده‌فروشی (۱۲۴ فروشگاه)، عمده‌فروشی (۴۷)، داروخانه (۳۸)، گالری‌ها (۲۲). هر گروه تنظیمات مستقل دارد.' },
