@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AMS-like Platform — Architecture</title>
+<style>
+  :root{
+    --bg:#0b1020; --bg2:#0f1730; --panel:#141d3a; --panel2:#1b2750;
+    --ink:#e8edff; --muted:#9fb0e0; --line:#2a3a6e;
+    --accent:#5b8cff; --accent2:#37e0c8; --warn:#ffb454; --hot:#ff6b8b; --moat:#b78bff;
+    --green:#3ddc84;
+    --mono:"SF Mono",ui-monospace,"Cascadia Code",Menlo,Consolas,monospace;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:radial-gradient(1200px 800px at 70% -10%,#1a2550 0%,var(--bg) 55%);
+    color:var(--ink);font-family:var(--sans);overflow:hidden;
+  }
+  .deck{height:100vh;width:100vw;position:relative}
+  .slide{
+    position:absolute;inset:0;display:none;flex-direction:column;
+    padding:5.2vh 6vw 7vh;overflow-y:auto;
+    animation:fade .45s ease;
+  }
+  .slide.active{display:flex}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .eyebrow{color:var(--accent2);font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-size:.72rem;margin-bottom:.6rem}
+  h1{font-size:clamp(1.8rem,4.2vw,3.4rem);line-height:1.05;font-weight:800;letter-spacing:-.02em}
+  h2{font-size:clamp(1.5rem,3vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:1.4rem}
+  h2 .num{color:var(--accent);font-variant-numeric:tabular-nums;margin-right:.5rem;opacity:.65}
+  p.lead{color:var(--muted);font-size:clamp(1rem,1.5vw,1.25rem);max-width:60ch;line-height:1.55;margin-top:1rem}
+  .sub{color:var(--muted);font-size:.95rem;margin-bottom:1.3rem;max-width:78ch;line-height:1.5}
+  .grid{display:grid;gap:14px}
+  .cards2{grid-template-columns:repeat(2,1fr)}
+  .cards3{grid-template-columns:repeat(3,1fr)}
+  .cards4{grid-template-columns:repeat(4,1fr)}
+  .card{
+    background:linear-gradient(160deg,var(--panel),var(--bg2));
+    border:1px solid var(--line);border-radius:16px;padding:18px 18px;
+  }
+  .card h3{font-size:1.02rem;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+  .card p{color:var(--muted);font-size:.88rem;line-height:1.5}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none}
+  .d-acc{background:var(--accent)} .d-acc2{background:var(--accent2)}
+  .d-warn{background:var(--warn)} .d-hot{background:var(--hot)} .d-moat{background:var(--moat)}
+  .d-green{background:var(--green)}
+  .pill{display:inline-flex;align-items:center;gap:.45rem;background:var(--panel2);
+    border:1px solid var(--line);border-radius:999px;padding:.32rem .8rem;font-size:.8rem;color:var(--muted)}
+  .pillrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.6rem}
+  .mono{font-family:var(--mono)}
+  pre.diagram{
+    font-family:var(--mono);background:#0a1124;border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;color:#bcd0ff;font-size:clamp(.6rem,1.05vw,.86rem);line-height:1.5;
+    overflow:auto;white-space:pre;
+  }
+  .flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin-top:.5rem}
+  .step{flex:1;min-width:150px;background:linear-gradient(160deg,var(--panel),var(--bg2));
+    border:1px solid var(--line);border-radius:14px;padding:14px;position:relative}
+  .step .k{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);font-weight:700}
+  .step .v{font-size:.95rem;margin-top:.35rem;font-weight:600}
+  .step .n{font-size:.78rem;color:var(--muted);margin-top:.4rem;line-height:1.45}
+  .arrow{align-self:center;color:var(--accent);font-size:1.4rem;padding:0 .35rem;flex:none}
+  table{width:100%;border-collapse:collapse;margin-top:.4rem;font-size:.9rem}
+  th,td{text-align:left;padding:.62rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--accent2);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+  td.k{color:var(--ink);font-weight:600;white-space:nowrap}
+  td.n{color:var(--muted)}
+  .ol{counter-reset:step;display:grid;gap:12px;margin-top:.4rem}
+  .ol .row{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px}
+  .ol .row .idx{counter-increment:step;flex:none;width:34px;height:34px;border-radius:10px;
+    background:var(--accent);color:#06122e;font-weight:800;display:grid;place-items:center;font-size:1rem}
+  .ol .row .idx::before{content:counter(step)}
+  .ol .row .txt h4{font-size:1rem;margin-bottom:.2rem}
+  .ol .row .txt p{color:var(--muted);font-size:.86rem;line-height:1.5}
+  .callout{margin-top:1.5rem;background:linear-gradient(160deg,#1a2348,#10183200);
+    border:1px solid var(--line);border-left:3px solid var(--accent2);border-radius:12px;padding:16px 18px}
+  .callout b{color:var(--accent2)}
+  .rule{background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line);
+    border-radius:14px;padding:16px 18px}
+  .rule .t{font-weight:700;margin-bottom:.35rem;display:flex;gap:.5rem;align-items:center}
+  .rule p{color:var(--muted);font-size:.88rem;line-height:1.5}
+  .big-quote{font-size:clamp(1.15rem,2.4vw,1.9rem);font-weight:700;line-height:1.35;max-width:24ch;
+    border-left:4px solid var(--accent);padding-left:1rem}
+  .spread{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+  /* nav */
+  .nav{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);display:flex;align-items:center;
+    gap:14px;background:rgba(12,18,40,.8);backdrop-filter:blur(8px);border:1px solid var(--line);
+    border-radius:999px;padding:8px 14px;z-index:50}
+  .nav button{background:none;border:none;color:var(--ink);cursor:pointer;font-size:1.1rem;
+    width:30px;height:30px;border-radius:50%;display:grid;place-items:center}
+  .nav button:hover{background:var(--panel2)}
+  .dots{display:flex;gap:7px}
+  .dots i{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:.2s}
+  .dots i.on{background:var(--accent);transform:scale(1.3)}
+  .counter{font-family:var(--mono);font-size:.78rem;color:var(--muted);min-width:48px;text-align:center}
+  .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent2));z-index:60;transition:width .3s}
+  .scope-tags{display:flex;gap:.55rem;flex-wrap:wrap;margin-top:1.8rem}
+  .tag{border-radius:10px;padding:.45rem .8rem;font-size:.82rem;font-weight:600;border:1px solid var(--line)}
+  .tag.moat{background:rgba(183,139,255,.12);color:#d7c2ff;border-color:#4a3a7e}
+  .tag.safe{background:rgba(61,220,132,.1);color:#9af0c0;border-color:#256647}
+  .tag.off{background:rgba(159,176,224,.08);color:var(--muted)}
+  .hint{position:fixed;top:14px;right:18px;font-size:.72rem;color:var(--muted);font-family:var(--mono)}
+  .legend{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.4rem;font-size:.8rem;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:.4rem}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="hint">← → to navigate</div>
+<div class="deck" id="deck">
+
+  <!-- 1 TITLE -->
+  <section class="slide active">
+    <div style="margin:auto 0">
+      <div class="eyebrow">Reference Architecture · Single-branch · Native telematics · Pay-per-use</div>
+      <h1>An AMS-like Rental Platform<br/><span style="color:var(--accent)">Architecture Design</span></h1>
+      <p class="lead">A cloud rental system where physical machine usage flows from device to invoice.
+        Scoped to one branch, with the hard differentiators built in-house: native GPS/usage telematics
+        and metered pay-per-use billing.</p>
+      <div class="scope-tags">
+        <span class="tag moat">◆ Native telematics</span>
+        <span class="tag moat">◆ Pay-per-use billing</span>
+        <span class="tag safe">● Single branch</span>
+        <span class="tag off">○ Accounting: pluggable, deferred</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 WHAT SCOPE FIXES -->
+  <section class="slide">
+    <h2><span class="num">01</span>What the scope decisions fix</h2>
+    <p class="sub">Four answers turn an open-ended "rebuild AMS" into one concrete building. Each removed or kept a whole subsystem.</p>
+    <div class="grid cards2">
+      <div class="card">
+        <h3><span class="dot d-moat"></span>Native telematics → kept</h3>
+        <p>A separate ingestion service + a time-series store become non-negotiable. This is the one seam worth splitting out of the monolith on day one — its scaling and failure profile are nothing like the ERP's.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot d-moat"></span>Pay-per-use → kept</h3>
+        <p>The biggest consequence: <b>billing correctness now depends on sensor-data correctness.</b> The rating engine stops being a pure function of dates and starts consuming noisy physical reality.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot d-green"></span>Single branch → simplify</h3>
+        <p>Drop cross-branch transfers &amp; consolidation. But keep <span class="mono">org_id/branch_id</span> on every row — one column now is the difference between "add branches later" being additive vs. a rewrite.</p>
+      </div>
+      <div class="card">
+        <h3><span class="dot d-acc"></span>Accounting → deferred</h3>
+        <p>Don't block on the ERP choice. Define a <span class="mono">LedgerExport</span> port now, ship CSV/PDF export, drop an Exact/Twinfield/SAP adapter in behind the same interface later.</p>
+      </div>
+    </div>
+    <div class="callout">By choosing native telematics + pay-per-use you took on the <b>moat</b> — the hard, differentiating engineering — while skipping the boring <b>scale</b> complexity. Most of the project's risk <i>and</i> value now live in one pipeline: <b>device → usage → invoice</b>.</div>
+  </section>
+
+  <!-- 3 SYSTEM SHAPE -->
+  <section class="slide">
+    <h2><span class="num">02</span>System shape — monolith + one ingestion service</h2>
+    <p class="sub">Not microservices. Two deployables, joined by an event stream. The ERP modules share too many transactions to split early; telematics is genuinely independent, so it gets its own service.</p>
+    <pre class="diagram">
+   Back-office ──▶ ┌───────────────────────────────────────────────┐
+   Portal      ──▶ │           CORE APP (modular monolith)         │
+   Storefront  ──▶ │  catalog · customers · contracts · planning   │
+                   │  board · billing · RATING ENGINE · public API │
+                   └─────────────┬─────────────────────▲───────────┘
+                                 │                      │ usage windows (events)
+                       ┌─────────▼──────────┐           │
+                       │     PostgreSQL     │           │
+                       │  + Timescale ext.  │◀──────────┤
+                       │  OLTP · ledger ·   │           │
+                       │  telemetry         │           │
+                       └────────────────────┘           │
+                                                         │
+   Devices ─MQTT/TLS─▶ ┌──────────────────────────────┴─────────────┐
+   (GPS, engine hrs)   │       TELEMATICS INGESTION SERVICE          │
+                       │  gateway → validate/dedup/reorder →         │
+                       │  raw readings → derive billable usage →     │
+                       │  geofence &amp; unauthorized-use alerts        │
+                       └─────────────────────────────────────────────┘
+    </pre>
+    <div class="callout"><b>Ops win at single-branch scale:</b> run <b>TimescaleDB as a Postgres extension</b>, not a separate InfluxDB. One database to operate — and you can SQL-join telemetry against contracts in a single query. That join <i>is</i> pay-per-use; you do not want it spanning two systems. Split it out only if volume later forces you to.</div>
+  </section>
+
+  <!-- 4 THE PIPELINE -->
+  <section class="slide">
+    <h2><span class="num">03</span>The critical path: device → invoice</h2>
+    <p class="sub">This is the only genuinely novel part; everything else is well-trodden. One rule makes it defensible:</p>
+    <div class="big-quote">Never bill off raw readings. Bill off a reviewed, derived usage record.</div>
+    <div class="flow" style="margin-top:1.6rem">
+      <div class="step"><div class="k">Ingest</div><div class="v">Raw telemetry</div><div class="n">Immutable, append-only. The source of truth you can always replay.</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="k">Normalize</div><div class="v">Usage window</div><div class="n">Dedup, reorder, flag gaps. Versioned &amp; auditable. <span class="mono">provisional→confirmed→invoiced→adjusted</span></div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="k">Attribute + rate</div><div class="v">Rating event</div><div class="n">Which contract owned this asset at this timestamp? Apply price scale. Idempotent key = <span class="mono">contract_line + usage_window</span>.</div></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="k">Bill</div><div class="v">Invoice line</div><div class="n">At the billing run. Fully traceable back to raw readings.</div></div>
+    </div>
+  </section>
+
+  <!-- 5 THREE RULES -->
+  <section class="slide">
+    <h2><span class="num">04</span>Three rules that prevent the classic disasters</h2>
+    <p class="sub">Pay-per-use kills projects in predictable ways. These three design decisions defuse each one.</p>
+    <div class="grid cards3">
+      <div class="rule">
+        <div class="t"><span class="dot d-acc"></span>Temporal attribution is a clean join</div>
+        <p>A reading belongs to whatever contract owned that asset <i>at that timestamp</i>. The contract spine already models <span class="mono">[start,end)</span> with <span class="mono">tstzrange</span> — so "who owned asset X at time T" is a one-line range query. Your state machine and your billing attribution are the <b>same mechanism</b>.</p>
+      </div>
+      <div class="rule">
+        <div class="t"><span class="dot d-acc2"></span>Raw ≠ billable</div>
+        <p>Raw telemetry is immutable truth. Usage windows are a <i>projection</i> you can recompute, version, and dispute. When a customer challenges an invoice, you replay raw → usage and show your work. Disputes become resolvable instead of arguments.</p>
+      </div>
+      <div class="rule">
+        <div class="t"><span class="dot d-warn"></span>Gaps get flagged, never zero-billed</div>
+        <p>A 6-hour telemetry blackout is a business decision — estimate? exclude? ask the customer? — surfaced for review, not a silent <span class="mono">0</span> that quietly erodes trust in the entire invoice.</p>
+      </div>
+    </div>
+    <div class="callout">All three lean on the same backbone: an explicit <b>contract state machine</b> with <span class="mono">tstzrange</span> periods. That one decision prevents double-booking <i>and</i> drives usage attribution — build it first.</div>
+  </section>
+
+  <!-- 6 DOMAIN SPINE -->
+  <section class="slide">
+    <h2><span class="num">05</span>The domain spine</h2>
+    <p class="sub">Get the aggregates right early — money, the contract state machine, and time periods. Retrofitting these is the most expensive mistake in the project.</p>
+    <pre class="diagram">
+  Organization 1──* Branch 1──* User           (branch kept for future multi-branch)
+  Branch 1──* Asset ──0..1 Device ──* UsageReading        ← time-series (Timescale)
+  Asset 1──* AssetLog (maintenance · certification · inspection)
+
+  Customer 1──* Reservation ──▶ Contract ──▶ Invoice
+                                  │
+        state: quote → reservation → active → closed → invoiced   (+ transition log)
+                                  │
+  Contract 1──* ContractLine 1──* RatingEvent ──(incl. pay-per-use)──▶ InvoiceLine
+  Invoice 1──* InvoiceLine · 1──* Payment · CreditNote
+  PriceScale · Surcharge · TaxRule · UsageWindow(status, version)
+    </pre>
+    <div class="legend">
+      <span><span class="dot d-hot"></span> immutable once issued (invoices → credit, never edit)</span>
+      <span><span class="dot d-acc"></span> <span class="mono">tstzrange</span> + EXCLUDE constraint (no double-booking)</span>
+      <span><span class="dot d-acc2"></span> money = <span class="mono">numeric</span> / integer minor units — never floats</span>
+    </div>
+  </section>
+
+  <!-- 7 BUILD ORDER -->
+  <section class="slide">
+    <h2><span class="num">06</span>Build order — forced by the dependency, and it's a gift</h2>
+    <p class="sub">Because billing now depends on telemetry, you must build bottom-up — and that order happens to de-risk the project for you.</p>
+    <div class="ol">
+      <div class="row"><div class="idx"></div><div class="txt"><h4>Contract spine + booking</h4>
+        <p>The temporal backbone. <span class="mono">tstzrange</span> exclusion = no double-booking <i>and</i> the usage-attribution join key, for free.</p></div></div>
+      <div class="row"><div class="idx"></div><div class="txt"><h4>Time-based billing — prove it against real invoices</h4>
+        <p>Price by period + scales + surcharges + tax. Validate against the client's existing AMS invoices. Deterministic, documented, self-checking. Get a billing engine you fully trust <b>before</b> sensor data goes near it.</p></div></div>
+      <div class="row"><div class="idx"></div><div class="txt"><h4>Telematics ingestion</h4>
+        <p>Raw readings flowing in, attributed to assets and contracts. No billing yet — just trustworthy data.</p></div></div>
+      <div class="row"><div class="idx"></div><div class="txt"><h4>Usage derivation + pay-per-use rating</h4>
+        <p>Layer metered usage on top of a billing engine you've <i>already verified</i>. Never build deterministic and metered billing at the same time.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 8 STACK -->
+  <section class="slide">
+    <h2><span class="num">07</span>Stack for this scope</h2>
+    <p class="sub">Boring where it can be, deliberate where it counts (money, time-series, device link).</p>
+    <table>
+      <tr><th>Concern</th><th>Pick</th><th>Why</th></tr>
+      <tr><td class="k">Core backend</td><td class="k">TypeScript / Node</td><td class="n">Matches the existing repo; fast to move. (.NET only if the team wants finance-grade decimals out of the box.)</td></tr>
+      <tr><td class="k">Money</td><td class="k">Postgres <span class="mono">numeric</span> + integer minor units</td><td class="n"><b>Never floats.</b> Non-negotiable.</td></tr>
+      <tr><td class="k">Database</td><td class="k">PostgreSQL + Timescale extension</td><td class="n">One database to run; telemetry ⋈ contract joins in plain SQL.</td></tr>
+      <tr><td class="k">Ingestion svc</td><td class="k">Node (Go gateway only if throughput demands)</td><td class="n">Single-branch fleet isn't high-throughput yet — don't over-engineer.</td></tr>
+      <tr><td class="k">Device link</td><td class="k">MQTT / TLS broker + per-device identity</td><td class="n">Provisioning &amp; auth from day one (EMQX / Mosquitto).</td></tr>
+      <tr><td class="k">Realtime / cache</td><td class="k">Redis</td><td class="n">Planning-board live updates, locks.</td></tr>
+      <tr><td class="k">Files</td><td class="k">S3-compatible object store</td><td class="n">Damage photos, signed PDFs, documents.</td></tr>
+      <tr><td class="k">Accounting</td><td class="k"><span class="mono">LedgerExport</span> port</td><td class="n">Default = CSV/PDF export; drop in an ERP adapter later behind the same interface.</td></tr>
+      <tr><td class="k">Frontend</td><td class="k">React + TypeScript</td><td class="n">Repo match.</td></tr>
+    </table>
+  </section>
+
+  <!-- 9 RISK + NEXT -->
+  <section class="slide">
+    <h2><span class="num">08</span>The one risk — and how to retire it first</h2>
+    <div class="spread">
+      <div style="max-width:52ch">
+        <p class="lead" style="margin-top:0">Native telematics + pay-per-use put most of the project's risk <i>and</i> most of its value into the same pipeline. That's fine — it just tells you exactly where to aim the first proof.</p>
+        <div class="callout" style="margin-top:1.6rem">
+          <b>Vertical-slice proof:</b> one device → raw readings → a usage window → a rated line → an invoice that <b>matches what the client would have billed in AMS</b>. Nail that thin end-to-end slice and you retire ~70% of the project's real uncertainty in the first stretch.
+        </div>
+      </div>
+      <div style="flex:1;min-width:240px">
+        <div class="rule" style="margin-bottom:12px"><div class="t"><span class="dot d-green"></span>Safe &amp; self-checking</div><p>Time-based billing — validated against existing invoices.</p></div>
+        <div class="rule" style="margin-bottom:12px"><div class="t"><span class="dot d-acc"></span>Well-trodden</div><p>Catalog, contracts, portal, planning board.</p></div>
+        <div class="rule"><div class="t"><span class="dot d-moat"></span>The frontier</div><p>Ingestion + usage derivation + pay-per-use rating.</p></div>
+      </div>
+    </div>
+    <div class="pillrow">
+      <span class="pill"><span class="dot d-acc2"></span>Next: scaffold the contract spine + <span class="mono">tstzrange</span> booking</span>
+      <span class="pill"><span class="dot d-acc"></span>Then: the vertical-slice proof</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev" aria-label="Previous">‹</button>
+  <div class="dots" id="dots"></div>
+  <span class="counter" id="counter"></span>
+  <button id="next" aria-label="Next">›</button>
+</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  const dotsWrap=document.getElementById('dots');
+  const counter=document.getElementById('counter');
+  const progress=document.getElementById('progress');
+  let i=0;
+  slides.forEach((_,k)=>{const d=document.createElement('i');d.onclick=()=>go(k);dotsWrap.appendChild(d)});
+  const dots=[...dotsWrap.children];
+  function go(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+    counter.textContent=(i+1)+' / '+slides.length;
+    progress.style.width=((i+1)/slides.length*100)+'%';
+  }
+  document.getElementById('next').onclick=()=>go(i+1);
+  document.getElementById('prev').onclick=()=>go(i-1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(i+1);
+    if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);
+    if(e.key==='Home')go(0); if(e.key==='End')go(slides.length-1);
+  });
+  go(0);
+</script>
+</body>
+</html>
